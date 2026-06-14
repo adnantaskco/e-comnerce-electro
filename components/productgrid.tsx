@@ -48,11 +48,11 @@ function Productgrid() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
           {/* LEFT FEATURE IMAGE */}
-          <div className="h-[250px] sm:h-[300px] lg:h-full">
+          <div className="h-[250px] sm:h-[300px] md:h-[480px]">
             <img
-              src="https://shopatsc.com/cdn/shop/products/ZV-1F_Condition_Parameter-_3.jpg?v=1680765619"
+              src="https://m.media-amazon.com/images/I/81Sn-mz4CKL._AC_UF894,1000_QL80_.jpg"
               alt="featured"
-              className="w-full h-full object-cover rounded-xl"
+              className="w-full h-full  object-cover rounded-xl"
             />
           </div>
 

@@ -50,7 +50,7 @@ export function HeroCarousel() {
   )
 
   return (
-    <section className="w-full flex justify-center items-center py-5 bg-gray-100">
+    <section className=" container mx-auto flex justify-center items-center py-5 bg-gray-100">
       <Carousel
         plugins={[plugin]}
         opts={{
