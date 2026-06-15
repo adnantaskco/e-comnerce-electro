@@ -71,10 +71,10 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="w-full bg-white border-b">
+    <header className="w-full bg-white ">
       {/* TOP BAR */}
-      <div className="border-b text-gray-600 text-xs md:text-sm">
-        <div className="container mx-auto px-4 lg:px-16">
+      <div className="  text-xs md:text-sm">
+        <div className="container border-y text-gray-600 mx-auto px-4 lg:px-16">
           <div className="flex items-center justify-between py-2">
             {/* LEFT */}
             <div className="hidden md:flex items-center gap-6">
@@ -128,7 +128,7 @@ export default function Navbar() {
       </div>
 
       {/* MAIN NAV */}
-      <div className="container mx-auto px-4 lg:px-16 py-4">
+      <div className="container border-y  mx-auto px-4 lg:px-16 py-4">
         <div className="flex flex-wrap lg:flex-nowrap items-center gap-4">
           {/* MOBILE MENU BUTTON */}
           <button
@@ -192,7 +192,7 @@ export default function Navbar() {
       </div>
 
       {/* CATEGORY BAR */}
-      <div className="border-t">
+      <div className="">
         <div className="container mx-auto px-4 lg:px-16">
           <div className="flex items-center gap-10 overflow-x-auto whitespace-nowrap py-4 no-scrollbar">
             {categories.map((item) => (

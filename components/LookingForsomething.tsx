@@ -54,7 +54,7 @@ export default function BlogSection() {
             placeholder="Search products..."
             className="w-full h-12 sm:h-14 border rounded-full pl-5 pr-14 outline-none"
           />
-          <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-primary hover:bg-yellow-500 transition p-3 rounded-full">
+          <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-primary hover:primary transition p-3 rounded-full">
             <Search size={18} />
           </button>
         </div>

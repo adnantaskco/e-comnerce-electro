@@ -31,8 +31,8 @@ const services = [
 
 function Services() {
   return (
-    <section className=" py-2 bg-gray-100 border-b border-white/10">
-      <div className="container mx-auto px-4 lg:px-16">
+    <section className=" py-2 ">
+      <div className="container mx-auto px-4 lg:px-16 bg-gray-100 border-b border-white/10">
         
         <div className="flex gap-6 overflow-x-auto lg:overflow-visible no-scrollbar">
 

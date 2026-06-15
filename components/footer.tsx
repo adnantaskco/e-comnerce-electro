@@ -5,10 +5,10 @@ import { Headset, Phone, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t">
+    <footer className="container mx-auto px-4 sm:px-6 lg:px-16 py-8 bg-white ">
       {/* TOP SUPPORT SECTION */}
-      <div className="border-b">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-16 py-8">
+      <div className="border-y py-5">
+        <div className="">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-start lg:items-center">
 
             {/* Help */}
@@ -52,7 +52,7 @@ export default function Footer() {
 
             {/* Button */}
             <div className="flex sm:justify-start lg:justify-end">
-              <button className="w-full sm:w-auto bg-primary hover:bg-yellow-500 transition px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold uppercase text-sm sm:text-base">
+              <button className="w-full sm:w-auto bg-primary hover:bg-primary transition px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold uppercase text-sm sm:text-base">
                 Start New Chat
               </button>
             </div>
@@ -148,7 +148,7 @@ export default function Footer() {
               <h4 className="font-bold text-xl sm:text-2xl mb-4 sm:mb-6">
                 {section.title}
               </h4>
-              <ul className="space-y-3 sm:space-y-2 text-gray-700 hover:text-primary hover:transition-x-2 text-sm sm:text-base">
+              <ul className="space-y-3 sm:space-y-2 text-gray-700  hover:transition-x-2 text-sm sm:text-base">
                 {section.items.map((item, idx) => (
                   <li key={idx}>
                     <Link href="#">{item}</Link>
