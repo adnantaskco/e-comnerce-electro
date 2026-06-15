@@ -89,7 +89,7 @@ export default function Footer() {
       </div>
 
       {/* LINKS */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-16 py-12 sm:py-16">
+      <div >
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-10">
 
           {[
