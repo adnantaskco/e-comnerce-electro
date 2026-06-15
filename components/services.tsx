@@ -61,8 +61,8 @@ function Services() {
                   flex items-center justify-center
                   w-12 h-12
                   rounded-full
-                  bg-gray-500
-                  text-primary
+                  bg-gray-300
+                  text-black
                   text-2xl
                   group-hover:scale-110
                   transition

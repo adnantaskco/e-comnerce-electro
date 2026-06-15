@@ -140,9 +140,7 @@ export default function Navbar() {
 
           {/* LOGO */}
           <Link href="/" className="shrink-0">
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-700">
-              Taskco
-            </h1>
+            <img src="https://taskco.io/assets/taskco.svg" alt="" />
           </Link>
 
           {/* DESKTOP MENU BUTTON */}

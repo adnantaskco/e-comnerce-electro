@@ -83,13 +83,13 @@ export default function TendingSections() {
                   </div>
 
                   {/* Image */}
-                  <div className="h-52 overflow-hidden bg-gray-100">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </div>
+                  <div className="h-52  flex items-center justify-center overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
 
                   {/* Price */}
                   <div className="p-4 flex justify-between items-center">
