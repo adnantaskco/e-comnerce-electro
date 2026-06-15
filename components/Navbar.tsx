@@ -117,7 +117,7 @@ export default function Navbar() {
               </Link>
 
               <Link
-                href="#"
+                href="/loginpage"
                 className="flex items-center gap-2 hover:text-primary"
               >
                 <FiUser />
