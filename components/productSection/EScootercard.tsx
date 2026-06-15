@@ -93,9 +93,9 @@ function EScooter() {
                     </span>
                   </div>
 
-                  <button className="p-3 rounded-full bg-black cursor-pointer text-white hover:bg-primary transition">
-                    <FaCartArrowDown size={18} />
-                  </button>
+                <button className="p-3 rounded-full bg-black text-white hover:bg-primary active:scale-95 transition">
+                  <FaCartArrowDown size={18} />
+                </button>
                 </div>
 
               </div>

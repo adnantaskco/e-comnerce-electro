@@ -82,7 +82,7 @@ function Productgrid() {
                     {item.discount}
                   </p>
 
-                  <button className="mt-3 bg-white text-black px-3 py-1 rounded-md text-sm font-medium hover:bg-primary transition">
+                  <button className="mt-3 bg-white text-black px-3 py-1 rounded-md text-sm font-medium hover:bg-primary active:scale-95 transition">
                     Shop Now
                   </button>
                 </div>

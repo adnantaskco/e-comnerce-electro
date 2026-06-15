@@ -87,7 +87,7 @@ export function HeroCarousel() {
                     Up to ${product.price}
                   </div>
 
-                  <button className="mt-4 bg-white text-black px-4 py-2 w-28 rounded-lg font-medium hover:bg-primary transition">
+                  <button className="mt-4 bg-white text-black px-4 py-2 w-28 rounded-lg font-medium hover:bg-primary active:scale-95 transition">
                     Start Buying
                   </button>
                 </CardContent>
