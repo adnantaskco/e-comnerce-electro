@@ -2,6 +2,7 @@
 
 import useEmblaCarousel from "embla-carousel-react";
 import { DataElectricProducts } from "@/lib/Data/trendingproduct";
+import { useCart } from "../../app/context/CartContext";
 import {
   FaAnglesRight,
   FaCartArrowDown,
@@ -11,6 +12,8 @@ import {
 } from "react-icons/fa6";
 
 export default function TendingSections() {
+
+   const { addToCart } = useCart();
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
     dragFree: true,
@@ -103,7 +106,17 @@ export default function TendingSections() {
                       </p>
                     </div>
 
-                  <button className="p-3 rounded-full bg-black cursor-pointer text-white hover:bg-primary active:scale-95 transition">
+                  <button
+                   onClick={() =>
+                      addToCart({
+                        id: item.id,
+                        name: item.name,
+                         price: Number(item.sale_price),
+                        image: item.image,
+                      })
+                    }
+                  
+                  className="p-3 rounded-full bg-black cursor-pointer text-white hover:bg-primary active:scale-95 transition">
                     <FaCartArrowDown size={18} />
                   </button>
                   </div>

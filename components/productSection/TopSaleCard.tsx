@@ -1,6 +1,7 @@
 "use client";
 
 import useEmblaCarousel from "embla-carousel-react";
+import { useCart } from "../../app/context/CartContext";
 
 import {
   FaAnglesRight,
@@ -13,6 +14,7 @@ import React from 'react'
 import { DataTopSale } from '@/lib/Data/TopSale'
 
 function TopSaleCard() {
+   const { addToCart } = useCart();
 
  const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
@@ -107,7 +109,18 @@ function TopSaleCard() {
                           </p>
                         </div>
     
-                      <button className="p-3 rounded-full bg-black cursor-pointer text-white hover:bg-primary active:scale-95 transition">
+                      <button
+                      
+                       onClick={() =>
+                      addToCart({
+                        id: item.id,
+                        name: item.name,
+                         price: Number(item.sale_price),
+                        image: item.image,
+                      })
+                    }
+                      
+                      className="p-3 rounded-full bg-black cursor-pointer text-white hover:bg-primary active:scale-95 transition">
                         <FaCartArrowDown size={18} />
                       </button>
                       </div>

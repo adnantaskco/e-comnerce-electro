@@ -27,8 +27,11 @@ import {
   Watch,
   Tag,
 } from "lucide-react";
+import { useCart } from "@/app/context/CartContext";
 
 export default function Navbar() {
+
+   const { totalItems,totalPrice } = useCart();
   const [mobileMenu, setMobileMenu] = useState(false);
 
   const categories = [
@@ -174,17 +177,20 @@ export default function Navbar() {
               <FiHeart size={22} />
             </button>
 
-            <button className="relative flex items-center cursor-pointer gap-2">
-              <div className="relative">
+            <button  className="relative flex items-center cursor-pointer gap-2">
+              <a href="/cart">
+                <div className="relative">
                 <FiShoppingBag size={24} />
-
+               
                 <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-primary text-xs font-bold flex items-center justify-center">
-                  0
+                  {totalItems}
                 </span>
+              
               </div>
+              </a>
 
               <span className="hidden md:block font-medium">
-                $0.00
+                ৳ {totalPrice}
               </span>
             </button>
           </div>

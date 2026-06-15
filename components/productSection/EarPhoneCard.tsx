@@ -3,6 +3,7 @@
 import React from "react";
 import { DataAirPhones } from "@/lib/Data/AirPhone";
 import Autoplay from "embla-carousel-autoplay";
+import { useCart } from "../../app/context/CartContext";
 
 import {
   Carousel,
@@ -15,6 +16,8 @@ import {
 import { FaAnglesRight, FaCartArrowDown, FaHeart, FaUpRightFromSquare } from "react-icons/fa6";
 
 function EarPhoneCard() {
+ const { addToCart } = useCart();
+
   // ✅ FIX: no useRef needed
   const autoplay = React.useMemo(
     () =>
@@ -93,7 +96,16 @@ function EarPhoneCard() {
                     </span>
                   </div>
 
-                  <button className="p-3 rounded-full bg-black text-white cursor-pointer hover:bg-primary active:scale-95 transition">
+                  <button
+                   onClick={() =>
+                      addToCart({
+                        id: item.id,
+                        name: item.name,
+                         price: Number(item.sale_price),
+                        image: item.image,
+                      })
+                    }
+                  className="p-3 rounded-full bg-black text-white cursor-pointer hover:bg-primary active:scale-95 transition">
                     <FaCartArrowDown size={18} />
                   </button>
                 </div>

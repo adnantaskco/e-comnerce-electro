@@ -14,7 +14,7 @@ import Image from "next/image";
 export default function Home() {
   return (
    <>
-   <Navbar></Navbar>
+   
    <HeroCarousel></HeroCarousel>
    <Services></Services>
    
@@ -25,7 +25,7 @@ export default function Home() {
    <Productgrid></Productgrid>
    <Normalcard></Normalcard>
    <BlogSection></BlogSection>
-   <Footer></Footer>
+  
    </>
   );
 }
