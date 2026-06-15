@@ -31,7 +31,7 @@ function ElectricScooter() {
 
               <p className="text-lg md:text-2xl mt-3">
                 From{" "}
-                <span className="font-bold text-red-600">$749.99</span>
+                <span className="font-bold text-red-600">৳ 100k</span>
               </p>
 
               <button className="mt-6 px-6 py-3 bg-white text-black font-semibold rounded-full hover:bg-primary active:scale-95 transition">

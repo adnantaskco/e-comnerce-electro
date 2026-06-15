@@ -117,8 +117,8 @@ function EScooter() {
           ))}
         </CarouselContent>
 
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious className="absolute -left-4 top-1/2 -translate-y-1/2 bg-white shadow-md" />
+       <CarouselNext className="absolute -right-4 top-1/2 -translate-y-1/2 bg-white shadow-md" />
       </Carousel>
     </section>
   );
