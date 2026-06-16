@@ -22,7 +22,9 @@ export default function MainNav({
   const { totalItems, totalPrice } = useCart();
 
   return (
-    <div className="container border-y mx-auto px-4 lg:px-16 py-4">
+    <>
+    <section className="sticky top-0 z-50 bg-white">
+      <div className="container border-y mx-auto px-4 lg:px-16 py-4">
       <div className="flex flex-wrap lg:flex-nowrap items-center gap-4">
 
         {/* MOBILE MENU */}
@@ -96,5 +98,8 @@ export default function MainNav({
 
       </div>
     </div>
+    </section>
+    
+    </>
   );
 }
