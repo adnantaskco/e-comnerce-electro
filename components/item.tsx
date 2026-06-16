@@ -17,19 +17,19 @@ const SectionData = [
     id: 3,
     image:
       "https://electro.madrasthemes.com/3x/wp-content/uploads/sites/4/2023/11/cat-img-3-removebg-preview.png",
-    title: "Action Camera",
+    title: "Drone",
   },
   {
     id: 4,
     image:
       "https://electro.madrasthemes.com/3x/wp-content/uploads/sites/4/2023/11/cat-img-4-removebg-preview.png",
-    title: "Airphone",
+    title: "Action Camera",
   },
   {
     id: 5,
     image:
       "https://electro.madrasthemes.com/3x/wp-content/uploads/sites/4/2023/11/cat-img-5-removebg-preview.png",
-    title: "Smart Home",
+    title: "Smart Earphone",
   },
   {
     id: 6,
@@ -41,7 +41,7 @@ const SectionData = [
     id: 7,
     image:
       "https://electro.madrasthemes.com/3x/wp-content/uploads/sites/4/2023/11/cat-img-7-removebg-preview.png",
-    title: "Drone",
+    title: "Smart Watch",
   },
 ]
 

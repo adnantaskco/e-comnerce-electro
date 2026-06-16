@@ -34,7 +34,7 @@ export const DataFeatured= [
     name: "Gaming Earbuds Low Latency",
     has_variants: true,
     slug: "gaming-earbuds-low-latency",
-    image: "https://images.unsplash.com/photo-1583394838336-acd977736f90",
+    image: "https://www.startech.com.bd/image/cache/catalog/earbuds/defy/gravity-turbo/gravity-turbo-01-500x500.webp",
     sold_amount: 75,
     review: 4.1,
     retail_price: "4500.00",

@@ -87,7 +87,7 @@ export default function FeaturedCard() {
                       </div>
     
                       {/* Image */}
-                      <div className="h-52 flex items-center justify-center overflow-hidden">
+                      <div className="h-52  flex items-center justify-center overflow-hidden">
                   <img
                     src={item.image}
                     alt={item.name}

@@ -178,4 +178,5 @@ export const DataElectricProducts = [
     has_discount: true,
     sale_price: "135000.00",
   },
+  
 ];

@@ -4,6 +4,9 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer";
 import { CartProvider } from "./context/CartContext";
+import TopBar from "@/components/topnavbar";
+import MainNav from "@/components/mainnavbar";
+import CategoryBar from "@/components/CategoryBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
