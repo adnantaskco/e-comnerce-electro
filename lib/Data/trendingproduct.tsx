@@ -1,4 +1,4 @@
-export const DataElectricProducts = [
+export const DataTrandingProduct = [
   {
     id: 1,
     brand: "E Scooter",

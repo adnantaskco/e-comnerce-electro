@@ -1,7 +1,7 @@
 "use client";
 
 import useEmblaCarousel from "embla-carousel-react";
-import { DataElectricProducts } from "@/lib/Data/trendingproduct";
+import { DataTrandingProduct } from "@/lib/Data/trendingproduct";
 import { useCart } from "../../app/context/CartContext";
 import {
   FaAnglesRight,
@@ -57,7 +57,7 @@ export default function TendingSections() {
         {/* Viewport */}
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex gap-2">
-            {DataElectricProducts.map((item) => (
+            {DataTrandingProduct.map((item) => (
               <div
                 key={item.id}
                 className="
