@@ -35,8 +35,8 @@ function EScooter() {
   return (
     <section className="py-10">
       {/* Header */}
-      <div className="flex justify-between items-center border-b-2 pb-3 mb-6">
-        <h2 className="text-xl font-bold">Electric Scooter</h2>
+      <div className="flex justify-between items-center border-b-2  mb-6">
+        <h2 className="text-xl font-bold border-b-2 border-primary pb-3 ">Electric Scooter</h2>
 
         <button className="flex items-center gap-2 text-sm hover:text-blue-600">
           View All Product <FaAnglesRight />

@@ -30,8 +30,8 @@ function OnsaleCard() {
     <>
         <section className="">
        
-         <div className="flex items-center justify-between border-b-2 pb-3 mb-6">
-        <h2 className="text-lg md:text-xl font-bold">
+         <div className="flex items-center justify-between border-b-2  mb-6">
+        <h2 className="text-lg md:text-xl font-bold border-b-2 border-primary pb-3">
           On Sell Product Of the Week
         </h2>
 

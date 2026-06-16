@@ -23,7 +23,7 @@ export function TabsDemo() {
         <Tabs defaultValue="featured" className="w-full">
 
           {/* Tabs Header */}
-          <TabsList className="mb-6">
+          <TabsList className="mb-">
             <TabsTrigger
               value="featured"
               className="text-xl font-semibold"

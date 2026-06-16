@@ -25,9 +25,9 @@ export default function TendingSections() {
   return (
     <section className="container mx-auto px-4 lg:px-16 py-10">
       {/* Header */}
-      <div className="flex items-center justify-between border-b-2 pb-3 mb-6">
-        <h2 className="text-lg md:text-xl font-bold">
-          Trending Products This Week
+      <div className="flex items-center justify-between border-b-2  mb-6">
+        <h2 className="text-lg md:text-xl font-bold border-b-2 border-primary pb-3">
+          Trending Products
         </h2>
 
         <button className="flex items-center gap-2 text-sm font-medium hover:text-blue-600">

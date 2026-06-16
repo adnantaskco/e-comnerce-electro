@@ -26,9 +26,9 @@ export default function FeaturedCard() {
   return (
     <>
         <section className="">
-            <div className="flex items-center justify-between border-b-2 pb-3 mb-6">
-        <h2 className="text-lg md:text-xl font-bold">
-          New Featured Products This Week
+            <div className="flex items-center justify-between border-b-2  mb-6">
+        <h2 className="text-lg md:text-xl font-bold border-b-2 border-primary pb-3">
+          New Featured Products
         </h2>
 
         <button className="flex items-center gap-2 text-sm font-medium hover:text-blue-600">

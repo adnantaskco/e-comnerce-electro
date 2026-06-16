@@ -51,7 +51,7 @@ export default function CategoryBar() {
           <Link
             key={index}
             href="#"
-            className="flex items-center gap-2 whitespace-nowrap text-gray-600 hover:text-primary"
+            className="flex items-center gap-2 whitespace-nowrap text-black hover:text-primary"
           >
             {item.icon}
             {item.name}
