@@ -1,10 +1,33 @@
 "use client";
+import { useRouter } from "next/navigation";
 
-import { useCart } from "../context/CartContext";
-import { FaTrash } from "react-icons/fa";
-import PaymentButton from "@/components/ui/payment";
 
-export default function CartPage() {
+
+import Image from "next/image";
+import {
+  FaTrash,
+  FaChevronDown,
+  FaChevronUp,
+} from "react-icons/fa";
+import { useState } from "react";
+import { useCart } from "@/app/context/CartContext";
+import Link from "next/link";
+import { FaMinus, FaPlus } from "react-icons/fa6";
+
+export default function CheckoutPage() {
+  const router = useRouter();
+
+  const handlePlaceOrder = () => {
+  // save order, api call, etc.
+
+  router.push("/order-success");
+};
+
+const [useDifferentBilling, setUseDifferentBilling] =
+  useState(false);
+
+
+
   const {
     cart,
     removeFromCart,
@@ -12,134 +35,452 @@ export default function CartPage() {
     decreaseQty,
     totalPrice,
   } = useCart();
+  const [paymentMethod, setPaymentMethod] =
+  useState("cod");
+
+  const [couponOpen, setCouponOpen] = useState(false);
+  const [billingOpen, setBillingOpen] = useState(false);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-6 md:py-10">
-      <h1 className="text-2xl md:text-3xl font-bold text-center mb-8">
-        Shopping Cart
-      </h1>
+    <div className="bg-white min-h-screen">
+      {/* Header */}
+      <div className="bg-white border-b">
+        <div className="max-w-7xl mx-auto py-8 text-center">
+          <h1 className="text-4xl font-bold">Checkout</h1>
 
-      {/* Desktop Header */}
-      <div className="hidden md:grid grid-cols-5 text-sm font-semibold border-b pb-3">
-        <span>Product</span>
-        <span>Price</span>
-        <span>Quantity</span>
-        <span>Subtotal</span>
-        <span>Action</span>
+          <div className="mt-3 text-sm text-gray-500 "><span><a href="/home"> Home &gt;{" "}</a></span>
+           
+            <span className="text-primary">
+              Checkout
+            </span>
+          </div>
+        </div>
       </div>
 
-      {/* Cart Items */}
-      <div className="space-y-4 md:space-y-6 mt-6">
-        {cart.length === 0 ? (
-          <div className="text-center py-16">
-            <p className="text-gray-500 text-lg">Your cart is empty</p>
-          </div>
-        ) : (
-          cart.map((item) => (
-            <div
-              key={item.id}
-              className="border rounded-lg p-4 md:border-b md:rounded-none md:p-0 md:grid md:grid-cols-5 md:items-center md:gap-4 md:pb-4"
+      <div className="max-w-7xl mx-auto px-4 py-6">
+
+        {/* Login Register */}
+        <div className="bg-white border rounded-xl px-5 py-3 flex justify-between items-center mb-6">
+          <p className="text-sm">
+            Have any account? please login or register
+          </p>
+
+          <div className="flex gap-3">
+            <Link href="/loginpage">
+            <button className="border cursor-pointer border-primary text-primary px-5 py-2 rounded-md text-sm">
+              Login
+            </button>
+            </Link>
+             <Link
+              href="/signup"
+              className="bg-primary text-white cursor-pointer px-5 py-2 rounded-md text-sm"
             >
-              {/* Product */}
-              <div className="flex items-center gap-3">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-16 h-16 md:w-[70px] md:h-[70px] border rounded object-cover"
+              Register
+            </Link>
+            
+          </div>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-5">
+
+          {/* LEFT SIDE */}
+          <div className="lg:col-span-1 space-y-5 sticky top-5 self-start ">
+
+
+
+            {/* Shipping Address */}
+            <div className="bg-white rounded-2xl border p-6">
+
+              <h2 className="font-semibold text-lg border-l-4 border-primary pl-3 mb-5">
+                Shipping Address
+              </h2>
+
+              <div className="grid md:grid-cols-2 gap-4">
+
+                <input
+                  type="text"
+                  placeholder="Your Full Name *"
+                  className="h-12 border rounded-lg px-4 outline-none focus:border-primary"
                 />
 
-                <div>
-                  <p className="text-sm md:text-base font-medium line-clamp-2">
-                    {item.name}
-                  </p>
+                <input
+                  type="text"
+                  placeholder="017********"
+                  className="h-12 border rounded-lg px-4 outline-none focus:border-parmary"
+                />
 
-                  {/* Mobile subtotal */}
-                  <p className="md:hidden text-green-600 font-semibold mt-1">
-                    ৳{(item.price * item.qty).toLocaleString("en-BD")}
-                  </p>
-                </div>
+                <input
+                  type="text"
+                  placeholder="ex: House no. / building / street / area"
+                  className="md:col-span-2 h-12 border rounded-lg px-4 outline-none focus:border-primary"
+                />
+
+                <select className="h-12 border rounded-lg px-4 outline-none">
+                  <option>
+                    Select District
+                  </option>
+                </select>
+
+                <select className="h-12 border rounded-lg px-4 outline-none">
+                  <option>
+                    Select Thana 
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            {/* Billing Address */}
+{/* Billing Address */}
+<div className="bg-white rounded-2xl border overflow-hidden">
+
+  <div className="p-5">
+
+    <label className="flex items-center justify-between cursor-pointer">
+
+      <div>
+        <h2 className="font-semibold text-lg border-l-4 border-primary pl-3">
+          Billing Address
+        </h2>
+
+        <p className="text-sm text-gray-500 mt-1 ml-4">
+          Use a different billing address
+        </p>
+      </div>
+
+      <input
+        type="checkbox"
+        checked={useDifferentBilling}
+        onChange={(e) =>
+          setUseDifferentBilling(e.target.checked)
+        }
+        className="w-5 h-5 accent-"
+      />
+    </label>
+
+      </div>
+
+        {useDifferentBilling && (
+            <div className="grid md:grid-cols-2 gap-4 p-5">
+
+                      <input
+                        type="text"
+                        placeholder="Your Full Name *"
+                        className="h-12 border rounded-lg px-4 outline-none focus:border-primary"
+                      />
+
+                      <input
+                        type="text"
+                        placeholder="017********"
+                        className="h-12 border rounded-lg px-4 outline-none focus:border-parmary"
+                      />
+
+                      <input
+                        type="text"
+                        placeholder="ex: House no. / building / street / area"
+                        className="md:col-span-2 h-12 border rounded-lg px-4 outline-none focus:border-primary"
+                      />
+
+                      <select className="h-12 border rounded-lg px-4 outline-none">
+                        <option>
+                          Select District
+                        </option>
+                      </select>
+
+                      <select className="h-12 border rounded-lg px-4 outline-none">
+                        <option>
+                          Select Thana 
+                        </option>
+                      </select>
+            </div>
+        )}
+      </div>
+          </div>
+
+          {/* RIGHT SIDE */}
+          <div className="lg:col-span-2  space-y-5">
+
+            {/* Payment */}
+          <div className="space-y-3 grid grid-cols-2 sm:grid-cols-2 gap-2 border p-4 rounded-3xl">
+
+            {/* COD */}
+            <label
+              className={`flex items-center justify-between p-4 rounded-lg border cursor-pointer transition ${
+                paymentMethod === "cod"
+                  ? "border-primary bg-orange-50"
+                  : "border-gray-200"
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                <img
+                  src="https://ghorerbazar.com/assets/img/cod.svg"
+                  alt="COD"
+                  className="w-10 h-10 object-contain"
+                />
+                <span>Cash On Delivery</span>
               </div>
 
-              {/* Price */}
-              <div className="flex justify-between md:block mt-3 md:mt-0">
-                <span className="md:hidden font-medium">Price:</span>
+              <input
+                type="radio"
+                name="payment"
+                checked={paymentMethod === "cod"}
+                onChange={() => setPaymentMethod("cod")}
+                className="w-5 h-5 accent-"
+              />
+            </label>
+
+            {/* Online */}
+            <label
+              className={`flex items-center justify-between p-4 rounded-lg border cursor-pointer transition ${
+                paymentMethod === "online"
+                  ? "border-primary bg-orange-50"
+                  : "border-gray-200"
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                <img
+                  src="https://ghorerbazar.com/assets/img/online-payment.svg"
+                  alt="Online Payment"
+                  className="w-10 h-10 object-contain"
+                />
+                <span>Online Payment</span>
+              </div>
+
+              <input
+                type="radio"
+                name="payment"
+                checked={paymentMethod === "online"}
+                onChange={() => setPaymentMethod("online")}
+                className="w-5 h-5 accent-"
+              />
+            </label>
+
+            {/* bKash */}
+            <label
+              className={`flex items-center justify-between p-4 rounded-lg border cursor-pointer transition ${
+                paymentMethod === "bkash"
+                  ? "border-primary bg-orange-50"
+                  : "border-gray-200"
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                <img
+                  src="https://ghorerbazar.com/assets/img/bkash.png"
+                  alt="bKash"
+                  className="w-10 h-10 object-contain"
+                />
+                <span>bKash</span>
+              </div>
+
+              <input
+                type="radio"
+                name="payment"
+                checked={paymentMethod === "bkash"}
+                onChange={() => setPaymentMethod("bkash")}
+                className="w-5 h-5 accent-"
+              />
+            </label>
+
+          </div>
+
+            {/* Coupon */}
+            <div className="bg-white rounded-2xl border overflow-hidden">
+
+              <button
+                onClick={() =>
+                  setCouponOpen(!couponOpen)
+                }
+                className="w-full px-5 py-4 flex items-center justify-between font-medium"
+              >
                 <span>
-                  ৳{item.price.toLocaleString("en-BD")}
+                  Have any coupon or gift voucher?
+                </span>
+
+                {couponOpen ? (
+                  <FaChevronUp />
+                ) : (
+                  <FaChevronDown />
+                )}
+              </button>
+
+              {couponOpen && (
+                <div className="border-t p-5">
+                  <div className="flex gap-3">
+                    <input
+                      type="text"
+                      placeholder="Coupon Code"
+                      className="flex-1 border rounded-lg px-4 py-3"
+                    />
+
+                    <button className="bg-primary text-white px-5 rounded-lg">
+                      Apply
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Order Review */}
+            <div className="bg-white rounded-2xl border p-6">
+
+              <h2 className="font-semibold text-lg border-l-4 border-primary pl-3 mb-5">
+                Order review
+              </h2>
+
+              {cart.length === 0 ? (
+                <div className="text-center py-10 text-gray-500">
+                  Cart is empty
+                </div>
+              ) : (
+                cart.map((item) => (
+                  <div
+                    key={item.id}
+                    className="flex items-center justify-between py-5 border-b"
+                  >
+                    <div className="flex gap-4">
+
+                      <div className="w-14 h-14 border rounded-lg flex items-center justify-center overflow-hidden">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          width={50}
+                          height={50}
+                        />
+                      </div>
+
+                      <div>
+                        <h3 className="text-[15px] font-medium">
+                          {item.name}
+                        </h3>
+
+                        <div className="flex items-center gap-3 mt-2">
+
+                          <span className="text-sm">
+                            Qty:
+                          </span>
+
+                          <div className="flex items-center border rounded-lg overflow-hidden">
+
+                            <button
+                              onClick={() =>
+                                decreaseQty(item.id)
+                              }
+                              className="px-3 py-1 bg-gray-100 text-black text-lg font-bold"
+                            >
+                              <FaMinus/>
+                            </button>
+
+                            <span className="px-4">
+                              {item.qty}
+                            </span>
+
+                            <button
+                              onClick={() =>
+                                increaseQty(item.id)
+                              }
+                              className="px-3 py-1 bg-gray-100 text-black text-lg font-bold"
+                            >
+                              <FaPlus/>
+                            </button>
+                          </div>
+
+                          <span className="font-medium">
+                            ৳
+                            {(
+                              item.price * item.qty
+                            ).toLocaleString()}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button
+                      onClick={() =>
+                        removeFromCart(item.id)
+                      }
+                      className="text-red-500"
+                    >
+                      <FaTrash />
+                    </button>
+                  </div>
+                ))
+              )}
+            </div>
+
+
+            {/* Summary */}
+            <div className="bg-white rounded-2xl border p-5">
+
+              <div className="flex justify-between py-2 text-gray-600">
+                <span>Sub total</span>
+
+                <span>
+                  ৳
+                  {totalPrice.toLocaleString()}
                 </span>
               </div>
 
-              {/* Quantity */}
-              <div className="flex justify-between md:justify-start items-center mt-3 md:mt-0">
-                <span className="md:hidden font-medium">Quantity:</span>
-
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={() => decreaseQty(item.id)}
-                    className="w-8 h-8 border rounded hover:bg-gray-100"
-                  >
-                    -
-                  </button>
-
-                  <span className="w-8 text-center font-medium">
-                    {item.qty}
-                  </span>
-
-                  <button
-                    onClick={() => increaseQty(item.id)}
-                    className="w-8 h-8 border rounded hover:bg-gray-100"
-                  >
-                    +
-                  </button>
-                </div>
+              <div className="flex justify-between py-2 text-gray-600">
+                <span>Delivery cost</span>
+                <span>0 BDT</span>
               </div>
 
-              {/* Desktop Subtotal */}
-              <div className="hidden md:block font-semibold text-green-600">
-                ৳{(item.price * item.qty).toLocaleString("en-BD")}
-              </div>
+              <div className="border-t mt-3 pt-4 flex justify-between text-xl font-bold">
+                <span>Total</span>
 
-              {/* Remove */}
-              <div className="flex justify-end md:justify-start mt-3 md:mt-0">
-                <button
-                  onClick={() => removeFromCart(item.id)}
-                  className="text-red-500 hover:text-red-700 transition"
-                >
-                  <FaTrash size={18} />
-                </button>
+                <span>
+                  ৳
+                  {totalPrice.toLocaleString()}
+                </span>
               </div>
             </div>
-          ))
-        )}
-      </div>
 
-      {/* Cart Totals */}
-      {cart.length > 0 && (
-        <div className="mt-8 md:mt-10 flex justify-center md:justify-end">
-          <div className="w-full md:max-w-sm border p-5 rounded-lg shadow-sm bg-white">
-            <h2 className="text-lg font-bold mb-4">
-              Cart Totals
-            </h2>
+            {/* Notes */}
+            <div className="bg-white rounded-2xl border p-6">
 
-            <div className="flex justify-between mb-3">
-              <span>Subtotal</span>
+              <h2 className="font-semibold text-lg border-l-4 border-primary pl-3 mb-4">
+                Special notes
+                <span className="text-sm text-gray-500 ml-2">
+                  (Optional)
+                </span>
+              </h2>
+
+              <textarea
+                rows={4}
+                maxLength={90}
+                className="w-full border rounded-lg p-4 resize-none"
+              />
+
+              <p className="text-xs text-gray-400 mt-2">
+                0 / 90 characters
+              </p>
+            </div>
+
+            {/* Terms */}
+            <label className="flex items-start gap-3 text-sm">
+              <input
+                type="checkbox"
+                defaultChecked
+                className="mt-1"
+              />
+
               <span>
-                ৳{totalPrice.toLocaleString("en-BD")}
+                I have read and agree to the
+                <span className="text-primary">
+                  {" "}
+                  Terms and Conditions,
+                  Privacy Policy &
+                  Refund and Return Policy
+                </span>
               </span>
-            </div>
+            </label>
 
-            <div className="border-t pt-3 flex justify-between text-lg font-bold">
-              <span>Total</span>
-              <span className="text-green-600">
-                ৳{totalPrice.toLocaleString("en-BD")}
-              </span>
-            </div>
-
-            <div className="mt-5">
-              <PaymentButton />
-            </div>
+            {/* Order Button */}
+            <button   onClick={handlePlaceOrder} className="w-full bg-primary hover:bg-orange-600 text-white py-4 rounded-lg font-semibold">
+              PLACE ORDER
+            </button>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }

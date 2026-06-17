@@ -42,7 +42,7 @@ export default function Footer() {
               <Mail size={30} className="shrink-0" />
               <div>
                 <h4 className="text-lg sm:text-xl font-bold break-all">
-                  info@electro.com
+                  info@taskco.com
                 </h4>
                 <p className="text-gray-500 text-sm">
                   Mail to us directly
