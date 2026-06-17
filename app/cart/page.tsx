@@ -15,6 +15,8 @@ import Link from "next/link";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 
 export default function CheckoutPage() {
+const [location, setLocation] = useState("dhaka"); 
+
   const router = useRouter();
 
   const handlePlaceOrder = () => {
@@ -30,6 +32,7 @@ const [useDifferentBilling, setUseDifferentBilling] =
 
   const {
     cart,
+    totalItems,
     removeFromCart,
     increaseQty,
     decreaseQty,
@@ -39,7 +42,10 @@ const [useDifferentBilling, setUseDifferentBilling] =
   useState("cod");
 
   const [couponOpen, setCouponOpen] = useState(false);
-  const [billingOpen, setBillingOpen] = useState(false);
+ 
+  const deliveryCharge =
+  totalItems > 0 ? (location === "dhaka" ? 100 : 180) : 0;
+const grandTotal = totalPrice + deliveryCharge;
 
   return (
     <div className="bg-white min-h-screen">
@@ -408,31 +414,46 @@ const [useDifferentBilling, setUseDifferentBilling] =
 
 
             {/* Summary */}
-            <div className="bg-white rounded-2xl border p-5">
+          <div className="bg-white rounded-2xl border p-5 space-y-3">
 
-              <div className="flex justify-between py-2 text-gray-600">
-                <span>Sub total</span>
-
-                <span>
-                  ৳
-                  {totalPrice.toLocaleString()}
-                </span>
-              </div>
-
-              <div className="flex justify-between py-2 text-gray-600">
-                <span>Delivery cost</span>
-                <span>0 BDT</span>
-              </div>
-
-              <div className="border-t mt-3 pt-4 flex justify-between text-xl font-bold">
-                <span>Total</span>
-
-                <span>
-                  ৳
-                  {totalPrice.toLocaleString()}
-                </span>
-              </div>
+            {/* Total Items */}
+            <div className="flex justify-between text-gray-600">
+              <span>Total Items</span>
+              <span>{totalItems.toLocaleString()}</span>
             </div>
+
+            {/* Subtotal */}
+            <div className="flex justify-between text-gray-600">
+              <span>Sub total</span>
+              <span>৳ {totalPrice.toLocaleString()}</span>
+            </div>
+
+            {/* Delivery Selection */}
+            <div className="flex justify-between items-center text-gray-600">
+              <span>Delivery Area</span>
+
+              <select
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                className="border rounded-md px-2 py-1 text-sm"
+              >
+                <option value="dhaka">Inside Dhaka (৳100)</option>
+                <option value="outside">Outside Dhaka (৳180)</option>
+              </select>
+            </div>
+
+            {/* Delivery Cost */}
+            <div className="flex justify-between text-gray-600">
+              <span>Delivery cost</span>
+              <span>৳ {deliveryCharge}</span>
+            </div>
+
+            {/* Total */}
+            <div className="border-t mt-3 pt-4 flex justify-between text-xl font-bold">
+              <span>Total</span>
+              <span>৳ {grandTotal.toLocaleString()}</span>
+            </div>
+          </div>
 
             {/* Notes */}
             <div className="bg-white rounded-2xl border p-6">
