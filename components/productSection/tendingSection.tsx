@@ -10,6 +10,7 @@ import {
   FaChevronLeft,
   FaChevronRight,
 } from "react-icons/fa6";
+import Link from "next/link";
 
 export default function TendingSections() {
 
@@ -58,6 +59,7 @@ export default function TendingSections() {
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex gap-2">
             {DataTrandingProduct.map((item) => (
+              <Link key={item.id} href={`/products/${item.id}`}>
               <div
                 key={item.id}
                 className="
@@ -122,6 +124,7 @@ export default function TendingSections() {
                   </div>
                 </div>
               </div>
+              </Link>
             ))}
           </div>
         </div>

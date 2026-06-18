@@ -10,6 +10,7 @@ import {
   FaChevronLeft,
   FaChevronRight,
 } from "react-icons/fa6";
+import Link from "next/link";
 
 export default function FeaturedCard() {
    const { addToCart } = useCart();
@@ -58,7 +59,9 @@ export default function FeaturedCard() {
             {/* Viewport */}
             <div className="overflow-hidden" ref={emblaRef}>
               <div className="flex gap-2">
+                
                 {DataFeatured.map((item) => (
+                  <Link key={item.id} href={`/products/${item.id}`}>
                   <div
                     key={item.id}
                     className="
@@ -123,6 +126,7 @@ export default function FeaturedCard() {
                       </div>
                     </div>
                   </div>
+                  </Link>
                 ))}
               </div>
             </div>

@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa6";
 import React from 'react'
 import { DataOnSale } from '@/lib/Data/Onsale'
+import Link from "next/link";
 
 function OnsaleCard() {
    const { addToCart } = useCart();
@@ -62,6 +63,7 @@ function OnsaleCard() {
             <div className="overflow-hidden" ref={emblaRef}>
               <div className="flex gap-2">
                 {DataOnSale.map((item) => (
+                  <Link key={item.id} href={`/products/${item.id}`}>
                   <div
                     key={item.id}
                     className="
@@ -126,6 +128,7 @@ function OnsaleCard() {
                       </div>
                     </div>
                   </div>
+                  </Link>
                 ))}
               </div>
             </div>

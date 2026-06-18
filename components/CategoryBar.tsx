@@ -18,7 +18,7 @@ import CameraPoster from "./ui/camera";
 
 export default function CategoryBar() {
   return (
-    <section className="relative hidden md:block z-50 border-y bg-white">
+    <section className="relative hidden md:block  border-y bg-white">
       <div className="container mx-auto px-4 md:px-16">
         
         <div className="flex gap-8 py-4 ">

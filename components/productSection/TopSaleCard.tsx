@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa6";
 import React from 'react'
 import { DataTopSale } from '@/lib/Data/TopSale'
+import Link from "next/link";
 
 function TopSaleCard() {
    const { addToCart } = useCart();
@@ -61,6 +62,8 @@ function TopSaleCard() {
             <div className="overflow-hidden" ref={emblaRef}>
               <div className="flex gap-2">
                 {DataTopSale.map((item) => (
+
+                  <Link key={item.id} href={`/products/${item.id}`}>
                   <div
                     key={item.id}
                     className="
@@ -126,6 +129,7 @@ function TopSaleCard() {
                       </div>
                     </div>
                   </div>
+                  </Link>
                 ))}
               </div>
             </div>
