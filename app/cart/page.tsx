@@ -87,10 +87,10 @@ const grandTotal = totalPrice + deliveryCharge;
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
 
           {/* LEFT SIDE */}
-          <div className="lg:col-span-1 space-y-5 sticky top-5 self-start ">
+          <div className="lg:col-span-1 space-y-5 lg:sticky lg:top-5 lg:self-start">
 
 
 
@@ -354,13 +354,13 @@ const grandTotal = totalPrice + deliveryCharge;
                       </div>
 
                       <div>
-                        <h3 className="text-[15px] font-medium">
+                        <h3 className="text-[15px] font-bold sm:font-semibold">
                           {item.name}
                         </h3>
 
                         <div className="flex items-center gap-3 mt-2">
 
-                          <span className="text-sm">
+                          <span className="text-sm hidden sm:block">
                             Qty:
                           </span>
 
