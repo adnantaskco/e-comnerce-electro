@@ -100,7 +100,7 @@ export default function CategoryBar() {
           </Link>
 
           {/* Gadgets */}
-          <Link href="#" className="flex items-center gap-2 whitespace-nowrap hover:text-primary">
+          <Link href="/gadgets" className="flex items-center gap-2 whitespace-nowrap hover:text-primary">
             <Watch size={18} />
             Gadgets
           </Link>

@@ -19,6 +19,7 @@ import {
   FaCartArrowDown,
   FaHeart,
 } from "react-icons/fa6";
+import Link from "next/link";
 
 function EScooter() {
   const { addToCart } = useCart();
@@ -54,6 +55,11 @@ function EScooter() {
       >
         <CarouselContent>
           {DataElectricScooter.map((item) => (
+            <Link
+             key={item.id}
+          href={`/products/${item.id}`}
+            >
+
             <CarouselItem
               key={item.id}
               className="basis-1/2 sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/3"
@@ -113,7 +119,7 @@ function EScooter() {
                   </button>
                 </div>
               </div>
-            </CarouselItem>
+            </CarouselItem> </Link>
           ))}
         </CarouselContent>
 
