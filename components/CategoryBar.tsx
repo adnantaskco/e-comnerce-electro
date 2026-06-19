@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-
 import {
   Laptop,
   Camera,
@@ -11,116 +10,170 @@ import {
   Headphones,
   MonitorSmartphone,
   Watch,
-  Tag,
   ChevronDown,
 } from "lucide-react";
-import CameraPoster from "./ui/camera";
 
 export default function CategoryBar() {
   return (
-    <section className="relative hidden md:block  border-y bg-white">
-      <div className="container mx-auto px-4 md:px-16">
-        
-        <div className="flex gap-8 py-4 ">
+    <section className="relative border-y bg-white">
+      <div className="container mx-auto px-2 sm:px-4 md:px-8 lg:px-16">
+        <div className="flex items-center gap-4 lg:gap-8 py-4 overflow-x-auto no-scrollbar">
 
           {/* Laptops */}
-          <Link href="#" className="flex items-center gap-2 whitespace-nowrap hover:text-primary">
+          <Link
+            href="#"
+            className="flex items-center gap-2 whitespace-nowrap flex-shrink-0 hover:text-primary transition-colors"
+          >
             <Laptop size={18} />
-            Laptops & Computers
+            <span className="hidden lg:inline">
+              Laptops & Computers
+            </span>
+            <span className="lg:hidden">Laptops</span>
           </Link>
 
-          {/* Cameras (Dropdown) */}
+          {/* Cameras */}
           <div className="relative group flex-shrink-0">
-            <div className="flex items-center gap-2 whitespace-nowrap cursor-pointer hover:text-primary">
+            <div className="flex items-center gap-2 whitespace-nowrap cursor-pointer hover:text-primary transition-colors">
               <Camera size={18} />
-              Cameras
+              <span>Cameras</span>
               <ChevronDown size={16} />
             </div>
 
-            {/* Dropdown */}
-            <div className="absolute left-0 top-full mt-3 w-52 bg-white border rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
-              
-              {/* <CameraPoster></CameraPoster> */}
-              
-              <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
+            <div className="absolute left-0 top-full mt-3 w-52 bg-white border rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <Link
+                href="#"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
                 DSLR
               </Link>
-              <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
+
+              <Link
+                href="#"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
                 Mirrorless
               </Link>
-              <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
+
+              <Link
+                href="#"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
                 Action Camera
               </Link>
             </div>
           </div>
 
-          {/* Smartphones (Dropdown) */}
+          {/* Smartphones */}
           <div className="relative group flex-shrink-0">
-            <div className="flex items-center gap-2 whitespace-nowrap cursor-pointer hover:text-primary">
+            <div className="flex items-center gap-2 whitespace-nowrap cursor-pointer hover:text-primary transition-colors">
               <Smartphone size={18} />
-              Smartphones & Tablets
+              <span className="hidden lg:inline">
+                Smartphones & Tablets
+              </span>
+              <span className="lg:hidden">
+                Smartphones
+              </span>
               <ChevronDown size={16} />
             </div>
 
-            <div className="absolute left-0 top-full mt-3 w-52 bg-white border rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
-              <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
+            <div className="absolute left-0 top-full mt-3 w-52 bg-white border rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <Link
+                href="#"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
                 Android Phones
               </Link>
-              <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
+
+              <Link
+                href="#"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
                 iPhones
               </Link>
-              <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
+
+              <Link
+                href="#"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
                 Tablets
               </Link>
             </div>
           </div>
 
           {/* Gaming */}
-          <Link href="#" className="flex items-center gap-2 whitespace-nowrap hover:text-primary">
+          <Link
+            href="#"
+            className="flex items-center gap-2 whitespace-nowrap flex-shrink-0 hover:text-primary transition-colors"
+          >
             <Gamepad2 size={18} />
             Gaming
           </Link>
 
           {/* TV */}
-          <Link href="#" className="flex items-center gap-2 whitespace-nowrap hover:text-primary">
+          <Link
+            href="#"
+            className="flex items-center gap-2 whitespace-nowrap flex-shrink-0 hover:text-primary transition-colors"
+          >
             <Tv size={18} />
             TV & Audio
           </Link>
 
           {/* Headphones */}
-          <Link href="#" className="flex items-center gap-2 whitespace-nowrap hover:text-primary">
+          <Link
+            href="#"
+            className="flex items-center gap-2 whitespace-nowrap flex-shrink-0 hover:text-primary transition-colors"
+          >
             <Headphones size={18} />
             Headphones
           </Link>
 
           {/* VR */}
-          <Link href="#" className="flex items-center gap-2 whitespace-nowrap hover:text-primary">
+          <Link
+            href="#"
+            className="flex items-center gap-2 whitespace-nowrap flex-shrink-0 hover:text-primary transition-colors"
+          >
             <MonitorSmartphone size={18} />
-            Virtual Reality
+            <span className="hidden lg:inline">
+              Virtual Reality
+            </span>
+            <span className="lg:hidden">VR</span>
           </Link>
 
           {/* Gadgets */}
-          <Link href="/gadgets" className="flex items-center gap-2 whitespace-nowrap hover:text-primary">
+          <Link
+            href="/gadgets"
+            className="flex items-center gap-2 whitespace-nowrap flex-shrink-0 hover:text-primary transition-colors"
+          >
             <Watch size={18} />
             Gadgets
           </Link>
 
-          {/* Deals */}
+          {/* Super Deal */}
           <div className="relative group flex-shrink-0">
-            <div className="flex items-center gap-2 whitespace-nowrap cursor-pointer text-red-400 hover:text-primary">
-             
-              Super Deal
+            <div className="flex items-center gap-2 whitespace-nowrap cursor-pointer text-red-500 hover:text-primary transition-colors">
+              <span>Super Deal</span>
               <ChevronDown size={16} />
             </div>
 
-            <div className="absolute left-0 top-full mt-3 w-52 bg-white border rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
-              <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
-                New Feature of the week
+            <div className="absolute left-0 top-full mt-3 w-60 bg-white border rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <Link
+                href="#"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
+                New Feature of the Week
               </Link>
-              <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
-                On Sale Products of the Years
+
+              <Link
+                href="#"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
+                On Sale Products of the Year
               </Link>
-              <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
+
+              <Link
+                href="#"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
                 Top Rated Products
               </Link>
             </div>
