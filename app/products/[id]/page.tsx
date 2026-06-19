@@ -2,21 +2,26 @@
 import { AllProducts } from "@/lib/products";
 import { notFound } from "next/navigation"; // Automatically triggers a 404 page if product doesn't exist
 
-import Image from "next/image";
 
 
-export default async function ViewProductPage({ params }) {
+
+interface PageProps {
+  params: Promise<{ id: string }>; // 'id' matches the folder name [id]
+}
+
+// 2. Apply the interface to the component
+export default async function ViewProductPage({ params }: PageProps) {
   // Await the params object (Required in Next.js 15+)
   const { id } = await params; 
- 
-
 
   const product = AllProducts.find((p) => String(p.id) === String(id));
 
-  // If the product isn't found, safely return a 404 error page
   if (!product) {
     notFound();
   }
+
+  // ... rest of your code
+
 
   return (
  <div className="container mx-auto px-4 md:;px-16 py-10">
