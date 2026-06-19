@@ -53,7 +53,7 @@ function EarPhoneCard() {
       >
         <CarouselContent>
           {DataAirPhones.map((item) => (
-             <Link key={item.id} href={`/products/${item.id}`}>
+             
             <CarouselItem
               key={item.id}
               className="basis-1/2 sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/3"
@@ -65,7 +65,7 @@ function EarPhoneCard() {
                   <FaHeart className="text-red-500" />
                   <span className="text-sm font-medium cursor-pointer">Wishlist</span>
                 </button>
-
+                <Link href={`/products/${item.id}`}>
                 {/* Name */}
                 <div className="p-4">
                   <p className="text-sm text-gray-500">
@@ -85,7 +85,7 @@ function EarPhoneCard() {
                     className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-
+                </Link>
                 {/* Price + Cart */}
                 <div className="p-4 flex justify-between items-center">
                   <div className="flex flex-col">
@@ -114,7 +114,7 @@ function EarPhoneCard() {
 
               </div>
             </CarouselItem>
-            </Link>
+          
           ))}
         </CarouselContent>
 

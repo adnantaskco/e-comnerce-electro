@@ -23,11 +23,11 @@ export default async function ViewProductPage({ params }) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* IMAGE SECTION */}
         <div className="bg-white rounded-2xl p-6 border shadow-sm">
-          <div className="relative w-full h-[400px] flex items-center justify-center bg-white rounded-2xl overflow-hidden border">
+          <div className="relative w-full h-[500px]  flex items-center justify-center bg-white rounded-2xl overflow-hidden border">
             <img
               src={product.image}
               alt={product.name}
-              className="max-h-full max-w-full object-contain p-6"
+              className="w-full h-full object-contain hover:scale-150 transition-transform duration-300"
             />
           </div>
         </div>

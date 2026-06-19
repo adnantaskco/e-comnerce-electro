@@ -61,7 +61,7 @@ export default function FeaturedCard() {
               <div className="flex gap-2">
                 
                 {DataFeatured.map((item) => (
-                  <Link key={item.id} href={`/products/${item.id}`}>
+                 
                   <div
                     key={item.id}
                     className="
@@ -77,7 +77,7 @@ export default function FeaturedCard() {
                       <FaHeart className="text-red-500" />
                       <span className="text-sm font-medium cursor-pointer">Wishlist</span>
                     </button>
-    
+                       <Link key={item.id} href={`/products/${item.id}`}>
                       {/* Product Info */}
                       <div className="p-4">
                         <p className="text-sm text-gray-500">
@@ -97,7 +97,7 @@ export default function FeaturedCard() {
                     className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-    
+                      </Link>
                       {/* Price */}
                       <div className="p-4 flex justify-between items-center">
                         <div>
@@ -126,7 +126,7 @@ export default function FeaturedCard() {
                       </div>
                     </div>
                   </div>
-                  </Link>
+                 
                 ))}
               </div>
             </div>

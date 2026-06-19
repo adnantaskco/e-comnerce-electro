@@ -55,10 +55,7 @@ function EScooter() {
       >
         <CarouselContent>
           {DataElectricScooter.map((item) => (
-            <Link
-             key={item.id}
-          href={`/products/${item.id}`}
-            >
+           
 
             <CarouselItem
               key={item.id}
@@ -71,7 +68,7 @@ function EScooter() {
                   <FaHeart className="text-red-500" />
                   <span className="text-sm font-medium">Wishlist</span>
                 </button>
-
+                <Link href={`/products/${item.id}`}>
                 {/* Name */}
                 <div className="p-4">
                   <p className="text-sm text-gray-500">
@@ -91,7 +88,7 @@ function EScooter() {
                     className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-
+                  </Link>
                 {/* Price + Cart */}
                 <div className="p-4 flex justify-between items-center">
                   <div className="flex flex-col">
@@ -119,7 +116,7 @@ function EScooter() {
                   </button>
                 </div>
               </div>
-            </CarouselItem> </Link>
+            </CarouselItem>
           ))}
         </CarouselContent>
 

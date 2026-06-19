@@ -63,7 +63,7 @@ function OnsaleCard() {
             <div className="overflow-hidden" ref={emblaRef}>
               <div className="flex gap-2">
                 {DataOnSale.map((item) => (
-                  <Link key={item.id} href={`/products/${item.id}`}>
+                 
                   <div
                     key={item.id}
                     className="
@@ -79,7 +79,7 @@ function OnsaleCard() {
                       <FaHeart className="text-red-500" />
                       <span className="text-sm font-medium cursor-pointer">Wishlist</span>
                     </button>
-    
+                     <Link key={item.id} href={`/products/${item.id}`}>
                       {/* Product Info */}
                       <div className="p-4">
                         <p className="text-sm text-gray-500">
@@ -99,7 +99,7 @@ function OnsaleCard() {
                     className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-    
+                      </Link>
                       {/* Price */}
                       <div className="p-4 flex justify-between items-center">
                         <div>
@@ -128,7 +128,7 @@ function OnsaleCard() {
                       </div>
                     </div>
                   </div>
-                  </Link>
+                 
                 ))}
               </div>
             </div>
