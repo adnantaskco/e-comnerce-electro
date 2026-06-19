@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { FaShopify } from "react-icons/fa";
 import {
   FiX,
   FiUser,
@@ -123,9 +124,9 @@ export default function MobileDrawer({
               <span className="text-sm">Wishlist</span>
             </Link>
 
-            <Link href="/stores">
-              <FiMapPin className="mx-auto mb-2" size={22} />
-              <span className="text-sm">Stores</span>
+            <Link href="/gadgets">
+              <FaShopify className="mx-auto mb-2" size={22} />
+              <span className="text-sm">Products</span>
             </Link>
 
           </div>

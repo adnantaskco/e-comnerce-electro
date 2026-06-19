@@ -9,9 +9,9 @@ interface PageProps {
   params: Promise<{ id: string }>; // 'id' matches the folder name [id]
 }
 
-// 2. Apply the interface to the component
+
 export default async function ViewProductPage({ params }: PageProps) {
-  // Await the params object (Required in Next.js 15+)
+
   const { id } = await params; 
 
   const product = AllProducts.find((p) => String(p.id) === String(id));
@@ -20,7 +20,7 @@ export default async function ViewProductPage({ params }: PageProps) {
     notFound();
   }
 
-  // ... rest of your code
+
 
 
   return (
