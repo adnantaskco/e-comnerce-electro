@@ -1,18 +1,18 @@
+"use client";
 
 import { AllProducts } from "@/lib/products";
-import { notFound } from "next/navigation"; // Automatically triggers a 404 page if product doesn't exist
-
-
-
+import { notFound } from "next/navigation"; 
+import React from "react";
+import { useCart } from "../../context/CartContext"; // Adjusted path to match your layout
 
 interface PageProps {
-  params: Promise<{ id: string }>; // 'id' matches the folder name [id]
+  params: Promise<{ id: string }>; 
 }
 
-
-export default async function ViewProductPage({ params }: PageProps) {
-
-  const { id } = await params; 
+export default function ViewProductPage({ params }: PageProps) {
+  // Unwrap the React params hook on the client
+  const { id } = React.use(params); 
+  const { addToCart } = useCart();
 
   const product = AllProducts.find((p) => String(p.id) === String(id));
 
@@ -20,15 +20,13 @@ export default async function ViewProductPage({ params }: PageProps) {
     notFound();
   }
 
-
-
-
   return (
- <div className="container mx-auto px-4 md:;px-16 py-10">
+    /* Fixed container alignment configuration syntax typo (md:;px-16 -> md:px-16) */
+    <div className="container mx-auto px-4 md:px-16 py-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* IMAGE SECTION */}
         <div className="bg-white rounded-2xl p-6 border shadow-sm">
-          <div className="relative w-full h-[500px]  flex items-center justify-center bg-white rounded-2xl overflow-hidden border">
+          <div className="relative w-full h-[500px] flex items-center justify-center bg-white rounded-2xl overflow-hidden border">
             <img
               src={product.image}
               alt={product.name}
@@ -40,7 +38,7 @@ export default async function ViewProductPage({ params }: PageProps) {
         {/* DETAILS SECTION */}
         <div className="space-y-5">
           {/* Brand */}
-          <p className="text-sm text-gray-500">{product.brand}</p>
+          <p className="text-sm text-gray-500">{product.brand || "ElectricScooter"}</p>
 
           {/* Name */}
           <h1 className="text-2xl font-bold">{product.name}</h1>
@@ -59,19 +57,13 @@ export default async function ViewProductPage({ params }: PageProps) {
           <div className="bg-gray-50 p-4 rounded-xl border">
             <div className="flex items-end gap-3">
               <h2 className="text-3xl font-bold text-red-600">
-                ৳{product.sale_price}
+                ৳{product.sale_price.toLocaleString()}
               </h2>
 
               {product.has_discount && (
-                <>
-                  <span className="line-through text-gray-400">
-                    ৳{product.retail_price}
-                  </span>
-
-                  {/* <span className="text-green-600 font-semibold">
-                    -{product.}%
-                  </span> */}
-                </>
+                <span className="line-through text-gray-400">
+                  ৳{product.retail_price.toLocaleString()}
+                </span>
               )}
             </div>
 
@@ -82,13 +74,22 @@ export default async function ViewProductPage({ params }: PageProps) {
 
           {/* Actions */}
           <div className="flex gap-4">
-            <button className="flex-1 bg-primary hover:bg-orange-600 text-white py-3 rounded-xl font-semibold">
+            <button className="flex-1 bg-primary hover:bg-orange-600 text-white py-3 rounded-xl font-semibold transition">
               Wishlist
             </button>
 
+            {/* Added dynamic addToCart execution onClick event */}
             <button
-            
-            className="flex-1 border border-gray-300 hover:bg-gray-100 py-3 rounded-xl font-semibold">
+              onClick={() =>
+                addToCart({
+                  id: product.id,
+                  name: product.name,
+                  price: Number(product.sale_price),
+                  image: product.image,
+                })
+              }
+              className="flex-1 border border-gray-300 bg-white hover:bg-gray-100 active:scale-[0.98] text-slate-900 py-3 rounded-xl font-semibold transition"
+            >
               Add to Cart
             </button>
           </div>
@@ -106,9 +107,8 @@ export default async function ViewProductPage({ params }: PageProps) {
       <div className="mt-12 bg-white border rounded-2xl p-6">
         <h2 className="font-bold text-lg mb-3">Product Details</h2>
         <p className="text-gray-600 leading-relaxed">
-          Experience powerful bass with Bass Boost Earbuds X1.
-          Designed for comfort, deep sound quality, and long usage.
-          Perfect for music lovers and gamers.
+          Experience premium build quality and top tier functionality with the {product.name}. 
+          Designed for longevity, comfort, and seamless performance.
         </p>
       </div>
     </div>

@@ -22,7 +22,7 @@ const [location, setLocation] = useState("dhaka");
   const handlePlaceOrder = () => {
   // save order, api call, etc.
 
-  router.push("/order-success");
+  router.push("/payment");
 };
 
 const [useDifferentBilling, setUseDifferentBilling] =
@@ -220,9 +220,9 @@ const grandTotal = totalPrice + deliveryCharge;
                 <img
                   src="https://ghorerbazar.com/assets/img/cod.svg"
                   alt="COD"
-                  className="w-10 h-10 object-contain"
+                  className="w-10 h-10 sm:w-6 sm:h-6 object-contain"
                 />
-                <span>Cash On Delivery</span>
+                <span >Cash On Delivery</span>
               </div>
 
               <input
@@ -246,7 +246,7 @@ const grandTotal = totalPrice + deliveryCharge;
                 <img
                   src="https://ghorerbazar.com/assets/img/online-payment.svg"
                   alt="Online Payment"
-                  className="w-10 h-10 object-contain"
+                  className="w-10 h-10 w-10 h-10 sm:w-6 sm:h-6  object-contain"
                 />
                 <span>Online Payment</span>
               </div>
@@ -272,7 +272,7 @@ const grandTotal = totalPrice + deliveryCharge;
                 <img
                   src="https://ghorerbazar.com/assets/img/bkash.png"
                   alt="bKash"
-                  className="w-10 h-10 object-contain"
+                  className="w-10 h-10 w-10 h-10 sm:w-6 sm:h-6  object-contain"
                 />
                 <span>bKash</span>
               </div>

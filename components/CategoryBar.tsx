@@ -15,9 +15,13 @@ import {
 
 export default function CategoryBar() {
   return (
-    <section className="relative border-y bg-white">
-      <div className="container mx-auto px-2 sm:px-4 md:px-8 lg:px-16">
-        <div className="flex items-center gap-4 lg:gap-8 py-4 overflow-x-auto no-scrollbar">
+    /* Background wrapper section remains full width but with a matching stack context */
+    <section className="relative z-40 border-y bg-white w-full">
+      {/* GLOBAL CONTAINER RULES APPLIED: 
+        Forces the navigation row to share the exact layout bounding box as your catalog grid 
+      */}
+      <div className="container mx-auto px-4 md:px-16">
+        <div className="flex items-center gap-4 lg:gap-8 py-4 overflow-x-auto xl:overflow-visible no-scrollbar">
 
           {/* Laptops */}
           <Link
@@ -46,14 +50,12 @@ export default function CategoryBar() {
               >
                 DSLR
               </Link>
-
               <Link
                 href="#"
                 className="block px-4 py-2 hover:bg-gray-100"
               >
                 Mirrorless
               </Link>
-
               <Link
                 href="#"
                 className="block px-4 py-2 hover:bg-gray-100"
@@ -83,14 +85,12 @@ export default function CategoryBar() {
               >
                 Android Phones
               </Link>
-
               <Link
                 href="#"
                 className="block px-4 py-2 hover:bg-gray-100"
               >
                 iPhones
               </Link>
-
               <Link
                 href="#"
                 className="block px-4 py-2 hover:bg-gray-100"
@@ -155,21 +155,20 @@ export default function CategoryBar() {
               <ChevronDown size={16} />
             </div>
 
-            <div className="absolute left-0 top-full mt-3 w-60 bg-white border rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+            {/* Changed from left-0 to right-0 so the final drop panel doesn't stretch past screen view bounds */}
+            <div className="absolute right-0 top-full mt-3 w-60 bg-white border rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
               <Link
                 href="#"
                 className="block px-4 py-2 hover:bg-gray-100"
               >
                 New Feature of the Week
               </Link>
-
               <Link
                 href="#"
                 className="block px-4 py-2 hover:bg-gray-100"
               >
                 On Sale Products of the Year
               </Link>
-
               <Link
                 href="#"
                 className="block px-4 py-2 hover:bg-gray-100"

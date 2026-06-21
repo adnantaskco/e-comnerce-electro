@@ -1,3 +1,4 @@
+"use client"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import {
@@ -19,8 +20,19 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
+import { useRouter } from "next/navigation"
+
 
 export function FieldDemo() {
+
+
+  const router = useRouter();
+  
+    const handlePlaceOrder = () => {
+    // save order, api call, etc.
+  
+    router.push("/order-success");
+  };
   return (
     <div className="w-full max-w-md">
       <form>
@@ -144,7 +156,7 @@ export function FieldDemo() {
             </FieldGroup>
           </FieldSet>
           <Field orientation="horizontal">
-            <Button type="submit">Submit</Button>
+            <Button onClick={handlePlaceOrder} type="submit">Submit</Button>
             <Button variant="outline" type="button">
               Cancel
             </Button>

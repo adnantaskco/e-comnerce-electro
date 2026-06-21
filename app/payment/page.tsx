@@ -1,7 +1,20 @@
+"use client"
 import { FieldDemo } from "@/components/ui/paymentfield";
+import { useRouter } from "next/navigation";
+
 import React from "react";
 
 function Page() {
+
+
+
+  const router = useRouter();
+  
+    const handlePlaceOrder = () => {
+    // save order, api call, etc.
+  
+    router.push("/order-success");
+  };
   return (
     <section className="py-10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-16">
