@@ -12,14 +12,16 @@ import {
   Watch,
   ChevronDown,
 } from "lucide-react";
+import { FaCameraRetro } from "react-icons/fa";
+import { LuTabletSmartphone } from "react-icons/lu";
+import { PiGameControllerBold } from "react-icons/pi";
+import { MdOutlineSmartDisplay } from "react-icons/md";
 
 export default function CategoryBar() {
   return (
-    /* Background wrapper section remains full width but with a matching stack context */
-    <section className="relative z-40 border-y bg-white w-full">
-      {/* GLOBAL CONTAINER RULES APPLIED: 
-        Forces the navigation row to share the exact layout bounding box as your catalog grid 
-      */}
+   
+    <section className="relative z-40  bg-background w-full text-ring">
+
       <div className="container mx-auto px-4 md:px-16">
         <div className="flex items-center gap-4 lg:gap-8 py-4 overflow-x-auto xl:overflow-visible no-scrollbar">
 
@@ -38,27 +40,27 @@ export default function CategoryBar() {
           {/* Cameras */}
           <div className="relative group flex-shrink-0">
             <div className="flex items-center gap-2 whitespace-nowrap cursor-pointer hover:text-primary transition-colors">
-              <Camera size={18} />
+              <FaCameraRetro size={18} />
               <span>Cameras</span>
               <ChevronDown size={16} />
             </div>
 
-            <div className="absolute left-0 top-full mt-3 w-52 bg-white border rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+            <div className="absolute left-0 top-full mt-3 w-52 bg-background border rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
               <Link
                 href="#"
-                className="block px-4 py-2 hover:bg-gray-100"
+                className="block px-4 py-2 hover:bg-ring/5"
               >
                 DSLR
               </Link>
               <Link
                 href="#"
-                className="block px-4 py-2 hover:bg-gray-100"
+                className="block px-4 py-2 hover:bg-ring/5"
               >
                 Mirrorless
               </Link>
               <Link
                 href="#"
-                className="block px-4 py-2 hover:bg-gray-100"
+                className="block px-4 py-2 hover:bg-ring/5"
               >
                 Action Camera
               </Link>
@@ -68,7 +70,7 @@ export default function CategoryBar() {
           {/* Smartphones */}
           <div className="relative group flex-shrink-0">
             <div className="flex items-center gap-2 whitespace-nowrap cursor-pointer hover:text-primary transition-colors">
-              <Smartphone size={18} />
+              <LuTabletSmartphone size={18} />
               <span className="hidden lg:inline">
                 Smartphones & Tablets
               </span>
@@ -81,13 +83,13 @@ export default function CategoryBar() {
             <div className="absolute left-0 top-full mt-3 w-52 bg-white border rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
               <Link
                 href="#"
-                className="block px-4 py-2 hover:bg-gray-100"
+                className="block px-4 py-2 hover:bg-ring/5"
               >
                 Android Phones
               </Link>
               <Link
                 href="#"
-                className="block px-4 py-2 hover:bg-gray-100"
+                className="block px-4 py-2 hover:bg-ring/5"
               >
                 iPhones
               </Link>
@@ -105,7 +107,7 @@ export default function CategoryBar() {
             href="#"
             className="flex items-center gap-2 whitespace-nowrap flex-shrink-0 hover:text-primary transition-colors"
           >
-            <Gamepad2 size={18} />
+            <PiGameControllerBold size={18} />
             Gaming
           </Link>
 
@@ -114,7 +116,7 @@ export default function CategoryBar() {
             href="#"
             className="flex items-center gap-2 whitespace-nowrap flex-shrink-0 hover:text-primary transition-colors"
           >
-            <Tv size={18} />
+            <MdOutlineSmartDisplay size={18} />
             TV & Audio
           </Link>
 
@@ -150,7 +152,7 @@ export default function CategoryBar() {
 
           {/* Super Deal */}
           <div className="relative group flex-shrink-0">
-            <div className="flex items-center gap-2 whitespace-nowrap cursor-pointer text-red-500 hover:text-primary transition-colors">
+            <div className="flex items-center gap-2 whitespace-nowrap cursor-pointer text-destructive hover:text-primary transition-colors">
               <span>Super Deal</span>
               <ChevronDown size={16} />
             </div>
@@ -159,19 +161,19 @@ export default function CategoryBar() {
             <div className="absolute right-0 top-full mt-3 w-60 bg-white border rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
               <Link
                 href="#"
-                className="block px-4 py-2 hover:bg-gray-100"
+                className="block px-4 py-2 hover:bg-ring/5"
               >
                 New Feature of the Week
               </Link>
               <Link
                 href="#"
-                className="block px-4 py-2 hover:bg-gray-100"
+                className="block px-4 py-2 hover:bg-ring/5"
               >
                 On Sale Products of the Year
               </Link>
               <Link
                 href="#"
-                className="block px-4 py-2 hover:bg-gray-100"
+                className="block px-4 py-2 hover:bg-ring/5"
               >
                 Top Rated Products
               </Link>

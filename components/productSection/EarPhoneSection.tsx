@@ -1,13 +1,13 @@
 import React from "react";
-import EScooter from "./EScootercard";
+
 import EarPhoneCard from "./EarPhoneCard";
 
 function EarSection() {
   return (
-    <section className="">
-      <div className="container mx-auto px-4 md:px-16">
+    <section className=" bg-ring/5">
+      <div className="container mx-auto px-4 md:px-16 ">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center bg-background p-4 rounded-3xl">
 
           {/* LEFT BANNER */}
          
@@ -23,22 +23,22 @@ function EarSection() {
                 }}
                           >
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black/5"></div>
+            <div className="absolute inset-0 bg-text-primary/5"></div>
 
             {/* Content */}
-            <div className="relative px-6 text-">
+            <div className="relative px-6 ">
               
                 
-              <h1 className="text-2xl md:text-5xl font-bold mt-2">
+              <h1 className="text-2xl text-text-primary md:text-5xl font-bold mt-2">
                 Audio <br /> Studio wireless
               </h1>
-              <p className="text-md md:text-base font-bold tracking-wide text-black">
+              <p className="text-lg text-text-primary md:text-2xl mt-3">
                 Hear the music
               </p>
-              <p className="text-sm">Not the noice</p>
+              <p className="text-lg text-ring">Not the noice</p>
 
              
-              <button className="mt-6 px-6 py-3 bg-white text-black font-semibold rounded-full hover:bg-primary active:scale-95 transition">
+              <button className="mt-6 px-6 py-3 bg-secondary text-text-primary font-semibold rounded-full hover:text-secondary hover:bg-primary active:scale-95 transition">
                 View All
               </button>
             </div>

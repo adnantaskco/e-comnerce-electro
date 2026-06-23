@@ -5,34 +5,40 @@ import { MdOutlineLocalShipping } from "react-icons/md";
 import { FaHeadphonesSimple } from "react-icons/fa6";
 import { GiWallet } from "react-icons/gi";
 import { TbTruckReturn } from "react-icons/tb";
+import { IoPricetagsOutline } from "react-icons/io5";
 
 const services = [
   {
     icon: <MdOutlineLocalShipping />,
     title: "Free Shipping",
-    description: "For all orders over $100",
+    description: "Form  ৳ 1000",
   },
   {
     icon: <TbTruckReturn />,
-    title: "30 Days Returns",
-    description: "For an Exchange Product",
+    title: "30 Days",
+    description: "For free return",
   },
   {
     icon: <GiWallet />,
-    title: "Secure Payment",
-    description: "Payment Cards Accepted",
+    title: " Payment",
+    description: "Secure Payment system",
   },
   {
     icon: <FaHeadphonesSimple />,
     title: "24/7 Support",
     description: "Contact us anytime",
   },
+  {
+    icon: <IoPricetagsOutline />,
+    title: "Only Best",
+    description: "Brands",
+  },
 ];
 
 function Services() {
   return (
-    <section className=" py-2 ">
-      <div className="container mx-auto px-4 lg:px-16 bg-gray-100 border-b border-white/10">
+    <section className=" py-2 bg-ring/5 ">
+      <div className="container mx-auto px-4 lg:px-16  ">
         
         <div className="flex gap-6 overflow-x-auto lg:overflow-visible no-scrollbar">
 
@@ -44,15 +50,11 @@ function Services() {
                 flex items-center gap-4
                 min-w-[260px] sm:min-w-0 sm:flex-1
                 md:px-5 md:py-4
-                rounded-2xl
-
-                bg-white/5
+               
                 backdrop-blur-xl
-                border border-white/10
-
-                
-
                 transition-all duration-300
+                border-r-2
+                
               "
             >
               {/* Icon bubble */}
@@ -61,8 +63,8 @@ function Services() {
                   flex items-center justify-center
                   w-12 h-12
                   rounded-full
-                  bg-gray-300
-                  text-black
+                  bg-ring/10
+                  text-text-primary
                   text-2xl
                   group-hover:scale-110
                   transition
@@ -73,11 +75,11 @@ function Services() {
 
               {/* Text */}
               <div className="leading-tight">
-                <h6 className="text- font-semibold text-base group-hover:text-primary transition">
+                <h6 className="text-text-primary font-semibold  group-hover:text-primary transition">
                   {service.title}
                 </h6>
 
-                <p className="hidden  sm:block text-sm text-gray-900">
+                <p className="hidden  sm:block text-sm text-ring">
                   {service.description}
                 </p>
               </div>

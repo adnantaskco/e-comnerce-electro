@@ -50,7 +50,7 @@ export function HeroCarousel() {
   )
 
   return (
-    <section className=" container mx-auto flex justify-center items-center py-5 bg-gray-100">
+    <section className="  mx-auto w-full flex justify-center items-center py-10 bg-ring/5">
       <Carousel
         plugins={[plugin]}
         opts={{
@@ -76,18 +76,18 @@ export function HeroCarousel() {
                 />
 
                 {/* Dark Overlay */}
-                <div className="absolute inset-0 bg-black/30" />
+                <div className="absolute inset-0 bg-foreground/30" />
 
                 {/* Content */}
-                <CardContent className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
+                <CardContent className="relative z-10 flex flex-col justify-end h-full p-6 text-secondary">
                   <h2 className="text-2xl font-bold">{product.title}</h2>
-                  <p className="text-sm text-gray-200">{product.subtitle}</p>
+                  <p className="text-sm ">{product.subtitle}</p>
 
                   <div className="mt-2 text-lg font-semibold">
                     Up to ৳{product.price}
                   </div>
 
-                  <button className="mt-4 bg-white text-black px-4 py-2 w-28 rounded-lg font-medium hover:bg-primary active:scale-95 transition">
+                  <button className="mt-4 bg-background text-text-primary px-4 py-2 w-28 rounded-lg font-medium hover:text-secondary  hover:bg-primary active:scale-95 transition">
                     Start Buying
                   </button>
                 </CardContent>
