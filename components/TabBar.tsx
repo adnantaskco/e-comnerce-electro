@@ -18,29 +18,29 @@ import TopSaleCard from "./productSection/TopSaleCard";
 
 export function TabsDemo() {
   return (
-    <section>
-      <div className="container mx-auto px-4 md:px-16">
+    <section className="bg-ring/5 ">
+      <div className="container mx-auto px-4 md:px-16  py-4">
         <Tabs defaultValue="featured" className="w-full">
 
           {/* Tabs Header */}
-          <TabsList className="mb-">
+          <TabsList className="">
             <TabsTrigger
               value="featured"
-              className="text-xl font-semibold"
+              className="text-xl font-semibold text-text-primary"
             >
               Featured
             </TabsTrigger>
 
             <TabsTrigger
               value="onsale"
-              className="text-xl font-semibold"
+              className="text-xl font-semibold text-text-primary"
             >
               On Sale
             </TabsTrigger>
 
             <TabsTrigger
               value="toprated"
-              className="text-xl font-semibold"
+              className="text-xl font-semibold text-text-primary"
             >
               Top Rated
             </TabsTrigger>

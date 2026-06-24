@@ -5,19 +5,19 @@ const products = [
     title: "Headphones Pro",
     discount: "Up to 40% OFF",
     image:
-      "https://pyxis.nymag.com/v1/imgs/74c/77a/1acdc6393f18ab1d9f603742dcd466dc64-jlab-audio-epic.rhorizontal.w600.jpg",
+      "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcShJawmD6lmVy473z5fPxG7WRWSXZQSbm888GSoNbE6Kyn3FagX",
   },
   {
     title: "Smart Watch",
     discount: "Up to 30% OFF",
     image:
-      "https://www.custommacbd.com/cdn/shop/products/GalaxyWatch5-silver-custom-mac-bd.jpg?v=1661494308",
+      "https://img.magnific.com/free-photo/rendering-smart-home-device_23-2151039318.jpg?semt=ais_hybrid&w=740&q=80",
   },
   {
     title: "Gaming Console",
     discount: "Up to 50% OFF",
     image:
-      "https://zamve.com/wp-content/uploads/2024/11/ROG-Ally-X-Gaming-Handheld-from-Zamve-Online-Console-Game-Shop-BD.jpg",
+      "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSOWUrZUoXdKqv7Uis_W_oboRJH0eGe74W7qOkMCi9SVf5r3gn2",
   },
   {
     title: "360 Camera",
@@ -29,20 +29,20 @@ const products = [
     title: "Smart Phone",
     discount: "Up to 35% OFF",
     image:
-      "https://img.drz.lazcdn.com/static/bd/p/4fb895d9a4cb2e9ae59559364cb10892.jpg_960x960q80.jpg_.webp",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhb9Uvq1kv2LIypBmnlRGLNtYRFFC3FMtZ4LKYEKeRYSxyK1JI",
   },
   {
     title: "Gaming PC",
     discount: "Up to 60% OFF",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwEetBZD6FJ03VVWEEkGsCMFpoI41hMQXoSw&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDiqetNdcA7vvV-qrw91kA0-8DTEOa7e2GslUpZrdFfW4kYsnc",
   },
 ];
 
 function Productgrid() {
   return (
-    <section className="py-10">
-      <div className="container mx-auto px-4 md:px-16  bg-gray-100">
+    <section className="py-10 bg-ring/5">
+      <div className="container mx-auto px-4 md:px-16  ">
 
         {/* RESPONSIVE GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -71,18 +71,18 @@ function Productgrid() {
                 />
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-black/20" />
+                <div className="absolute inset-0 bg-foreground/20" />
 
                 {/* Content */}
-                <div className="relative z-10 h-full flex flex-col justify-end p-4 text-white">
+                <div className="relative z-10 h-full flex flex-col justify-end p-4 text-text-secondary">
                   <h2 className="text-base sm:text-lg font-bold">
                     {item.title}
                   </h2>
-                  <p className="text-xs sm:text-sm text-gray-200">
+                  <p className="text-xs sm:text-sm text-text-secondary">
                     {item.discount}
                   </p>
 
-                  <button className="mt-3 bg-white text-black px-3 py-1 rounded-md text-sm font-medium hover:bg-primary active:scale-95 transition">
+                  <button className="mt-3 bg-background text-text-primary hover:text-text-secondary px-3 py-1 rounded-md text-sm font-medium hover:bg-primary active:scale-95 transition">
                     Shop Now
                   </button>
                 </div>

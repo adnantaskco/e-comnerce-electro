@@ -24,14 +24,15 @@ export default function TendingSections() {
   const scrollNext = () => emblaApi?.scrollNext();
 
   return (
-    <section className="container mx-auto px-4 lg:px-16 py-10">
-      {/* Header */}
-      <div className="flex items-center justify-between border-b-2  mb-6">
-        <h2 className="text-lg md:text-xl font-bold border-b-2 border-primary pb-3">
+    <section className="bg-ring/5 py-5">
+    <div className="container mx-auto rounded-4xl bg-background px-4 md:px-16">
+            {/* Header */}
+      <div className="flex items-center justify-between border-b-2 py-5 bg-background mb-6">
+        <h2 className="text-lg md:text-xl font-bold border-b-2 text-text-primary border-primary pb-3">
           Trending Products
         </h2>
 
-        <button className="flex items-center gap-2 text-sm font-medium hover:text-blue-600">
+        <button className="flex items-center text-ring gap-2 text-sm font-medium hover:text-primary">
           View All Product
           <FaAnglesRight />
         </button>
@@ -42,7 +43,7 @@ export default function TendingSections() {
         {/* Left */}
         <button
           onClick={scrollPrev}
-          className="absolute -left-6 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full w-10 h-10 flex items-center justify-center"
+          className="absolute -left-6 top-1/2 -translate-y-1/2 z-20 bg-background shadow-lg rounded-full w-10 h-10 flex items-center justify-center"
         >
           <FaChevronLeft />
         </button>
@@ -50,7 +51,7 @@ export default function TendingSections() {
         {/* Right */}
         <button
           onClick={scrollNext}
-          className="absolute -right-6 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full w-10 h-10 flex items-center justify-center"
+          className="absolute -right-6 top-1/2 -translate-y-1/2 z-20 bg-background shadow-lg rounded-full w-10 h-10 flex items-center justify-center"
         >
           <FaChevronRight />
         </button>
@@ -69,20 +70,20 @@ export default function TendingSections() {
                   min-w-0
                 "
               >
-                <div className="group relative rounded-xl overflow-hidden bg-white  hover:shadow-xl transition-all duration-300">
+                <div className="group relative hover:border-2 rounded-xl overflow-hidden bg-background  hover:shadow-xl transition-all duration-300">
                   
-               <button className="absolute top-3 right-3 z-10 flex items-center gap-2  bg-white px-3 py-2 rounded-full shadow-md opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300">
-                  <FaHeart className="text-red-500" />
-                  <span className="text-sm font-medium cursor-pointer">Wishlist</span>
+               <button className="absolute top-3 right-3 z-10 flex items-center gap-2  bg-background px-3 py-2 rounded-full shadow-md opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300">
+                  <FaHeart className="text-destructive" />
+                  <span className="text-sm text-text-primary font-medium cursor-pointer">Wishlist</span>
                 </button>
                   <Link key={item.id} href={`/products/${item.id}`}>
                   {/* Product Info */}
                   <div className="p-4">
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-ring">
                       {item.brand}
                     </p>
 
-                    <h3 className="text-sm md:text-base font-semibold truncate">
+                    <h3 className="text-sm text-text-primary md:text-base font-semibold truncate">
                       {item.name}
                     </h3>
                   </div>
@@ -99,11 +100,11 @@ export default function TendingSections() {
                   {/* Price */}
                   <div className="p-4 flex justify-between items-center">
                     <div>
-                      <p className="text-xs text-gray-400 line-through">
+                      <p className="text-xs text-text-secondary line-through">
                         ৳{item.retail_price}
                       </p>
 
-                      <p className="font-bold text-red-600">
+                      <p className="font-bold text-destructive">
                         ৳{item.sale_price}
                       </p>
                     </div>
@@ -134,6 +135,7 @@ export default function TendingSections() {
           ← Drag with mouse →
         </div>
       </div>
+    </div>
     </section>
   );
 }

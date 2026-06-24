@@ -3,10 +3,10 @@ import EScooter from "./EScootercard";
 
 function ElectricScooter() {
   return (
-    <section className=" bg-ring/5 py-4">
+    <section className=" bg-ring/5 ">
       <div className="container mx-auto px-4 md:px-16 ">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center bg-background p-4 rounded-3xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center bg-background p-4 rounded-t-3xl">
 
           {/* LEFT BANNER */}
         <div className=" rounded-3xl bg-background">

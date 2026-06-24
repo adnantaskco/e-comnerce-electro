@@ -47,32 +47,35 @@ const SectionData = [
 
 function Item() {
   return (
-    <section className="">
-        <div className="container mx-auto px-4 md:px-16 bg-gray-100">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 p-6">
+<section className="bg-ring/5 py-6">
+  <div className="container mx-auto px-4 md:px-16">
+    
+    <div className="flex overflow-x-auto no-scrollbar gap-4 md:gap-6 snap-x snap-mandatory  scroll-smooth pb-4">
       {SectionData.map((item) => (
         <div
           key={item.id}
-          className="flex flex-col items-center justify-center text-center"
+          className="flex-shrink-0 snap-start flex flex-col items-center text-center
+                     w-[90px] sm:w-[110px] md:w-[180px]"
         >
-          {/* Image */}
-          <div className="w-28 h-28 flex items-center justify-center">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28">
             <img
               src={item.image}
               alt={item.title}
-              className="w-full h-full object-contain rounded-full m-2 p-4 bg-white cursor-pointer"
+              className="w-full h-full object-contain rounded-full bg-background p-3 md:p-4
+              shadow-sm hover:shadow-md hover:scale-105
+               transition-all duration-300 cursor-pointer"
             />
           </div>
 
-          {/* Title */}
-          <p className="mt-2 text-md font-semibold text-gray-700">
+          <p className="mt-3 text-xs sm:text-sm font-semibold text-text-primary line-clamp-2">
             {item.title}
           </p>
         </div>
       ))}
     </div>
-        </div>
-    </section>
+
+  </div>
+</section>
   )
 }
 

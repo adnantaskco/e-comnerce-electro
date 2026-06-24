@@ -30,12 +30,12 @@ function EarPhoneCard() {
   );
 
   return (
-    <section className="py-10">
+    <section className="md:my-10 rounded-3xl p-4 bg-background ">
       {/* Header */}
-      <div className="flex justify-between items-center border-b-2  mb-6">
-        <h2 className="text-xl font-bold border-b-2 border-primary pb-3">Earphones</h2>
+      <div className="flex justify-between items-center border-b-2 text-text-primary  mb-6">
+        <h2 className="text-xl font-semibold border-b-4 border-primary pb-3">Earphones</h2>
 
-        <button className="flex items-center gap-2  text-sm hover:text-blue-600">
+        <button className="flex items-center gap-2 text-ring text-sm hover:text-blue-600">
           
       View All Product <FaAnglesRight/>
         </button>
@@ -58,7 +58,7 @@ function EarPhoneCard() {
               key={item.id}
               className="basis-1/2 sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/3"
             >
-              <div className="group relative rounded-xl overflow-hidden bg-background hover:shadow-xl transition-all duration-300">
+              <div className="group relative rounded-xl overflow-hidden bg-background hover:border-2 hover:shadow-xl transition-all duration-300">
 
                 {/* Wishlist */}
                 <button className="absolute top-3 right-3 z-10 flex items-center gap-2 bg-background px-3 py-2 rounded-full shadow-md opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300">
