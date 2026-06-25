@@ -216,13 +216,13 @@ const grandTotal = totalPrice + deliveryCharge;
                   : "border-ring"
               }`}
             >
-              <div className="flex items-center gap-3 text-text-primary">
+              <div className="flex items-center gap-4 text-text-primary">
                 <img
                   src="https://ghorerbazar.com/assets/img/cod.svg"
                   alt="COD"
-                  className="w-10 h-10 sm:w-6 sm:h-6 object-contain"
+                  className="w-8 h-8 sm:w-5 sm:h-5 object-contain"
                 />
-                <span >Cash On Delivery</span>
+                <span className="hidden sm:block" >Cash On Delivery</span> 
               </div>
 
               <input
@@ -248,7 +248,7 @@ const grandTotal = totalPrice + deliveryCharge;
                   alt="Online Payment"
                   className="w-10 h-10 w-10 h-10 sm:w-6 sm:h-6  object-contain"
                 />
-                <span>Online Payment</span>
+                <span className="hidden sm:block" >Online Payment</span>
               </div>
 
               <input
@@ -274,7 +274,7 @@ const grandTotal = totalPrice + deliveryCharge;
                   alt="bKash"
                   className="w-10 h-10 w-10 h-10 sm:w-6 sm:h-6  object-contain"
                 />
-                <span>bKash</span>
+                <span className="hidden sm:block" >bKash</span>
               </div>
 
               <input
@@ -337,78 +337,65 @@ const grandTotal = totalPrice + deliveryCharge;
                   Cart is empty
                 </div>
               ) : (
-                cart.map((item) => (
-                  <div
-                    key={item.id}
-                    className="flex items-center justify-between py-5 border-b"
-                  >
-                    <div className="flex gap-4">
+            cart.map((item) => (
+                <div
+                  key={item.id}
+                  className="grid grid-cols-12 items-center px-5 py-5 border-b hover:bg-ring-20 transition"
+                >
 
-                      <div className="w-14 h-14 border rounded-lg flex items-center justify-center overflow-hidden">
-                        <img
-                          src={item.image}
-                          alt={item.name}
-                          width={50}
-                          height={50}
-                        />
-                      </div>
+                  {/* PRODUCT */}
+                  <div className="col-span-12 md:col-span-6 flex gap-4 items-center">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-14 h-14 object-cover rounded-lg border"
+                    />
 
-                      <div>
-                        <h3 className="text-[15px] text-text-primary font-bold sm:font-semibold">
-                          {item.name}
-                        </h3>
-
-                        <div className="flex items-center text-text-primary gap-3 mt-2">
-
-                          <span className="text-sm hidden sm:block">
-                            Qty:
-                          </span>
-
-                          <div className="flex items-center border rounded-lg overflow-hidden">
-
-                            <button
-                              onClick={() =>
-                                decreaseQty(item.id)
-                              }
-                              className="px-3 py-1 bg-ring/10 active:scale-95 text-text-primary text-lg font-bold"
-                            >
-                              <FaMinus/>
-                            </button>
-
-                            <span className="px-4 text-text-primary">
-                              {item.qty}
-                            </span>
-
-                            <button
-                              onClick={() =>
-                                increaseQty(item.id)
-                              }
-                              className="px-3 py-1 bg-ring/10 text-text-primary active:scale-95 text-lg font-bold"
-                            >
-                              <FaPlus/>
-                            </button>
-                          </div>
-
-                          <span className="font-medium text-text-primary">
-                            ৳
-                            {(
-                              item.price * item.qty
-                            ).toLocaleString()}
-                          </span>
-                        </div>
-                      </div>
+                    <div>
+                      <h3 className="font-medium text-text-primary text-sm md:text-base">
+                        {item.name}
+                      </h3>
+                      <button
+                        onClick={() => removeFromCart(item.id)}
+                        className="text-destructive text-sm mt-1 flex items-center gap-1"
+                      >
+                        <FaTrash size={12} /> Remove
+                      </button>
                     </div>
-
-                    <button
-                      onClick={() =>
-                        removeFromCart(item.id)
-                      }
-                      className="text-destructive"
-                    >
-                      <FaTrash />
-                    </button>
                   </div>
-                ))
+
+                  {/* PRICE */}
+                  <div className="hidden md:block col-span-2 text-center text-ring">
+                    ৳{item.price.toLocaleString()}
+                  </div>
+
+                  {/* QTY */}
+                  <div className="col-span-6 md:col-span-2 flex justify-start md:justify-center mt-3 md:mt-0">
+                    <div className="flex items-center border rounded-lg overflow-hidden">
+                      <button
+                        onClick={() => decreaseQty(item.id)}
+                        className="px-3 py-1 hover:bg-ring/50 active:scale-95 transition "
+                      >
+                        <FaMinus size={12} />
+                      </button>
+
+                      <span className="px-4 text-sm">{item.qty}</span>
+
+                      <button
+                        onClick={() => increaseQty(item.id)}
+                        className="px-3 py-1 hover:bg-ring/50 active:scale-95 transition "
+                      >
+                        <FaPlus size={12} />
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* TOTAL */}
+                  <div className="col-span-6 md:col-span-2 text-right text-text-primary font-semibold mt-3 md:mt-0">
+                    ৳{(item.price * item.qty).toLocaleString()}
+                  </div>
+                </div>
+              ))
               )}
             </div>
 
