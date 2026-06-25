@@ -8,7 +8,7 @@ export default function OrderSuccess() {
 
         <FaCheckCircle className="text-green-500 text-7xl mx-auto mb-5" />
 
-        <h1 className="text-3xl font-bold mb-3">
+        <h1 className="text-3xl text-text-primary font-bold mb-3">
           Congratulations!
         </h1>
 
