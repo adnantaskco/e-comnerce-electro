@@ -58,9 +58,12 @@
 
   --border: oklch(0.928 0.006 264.531);
   --input: oklch(0.928 0.006 264.531);
+/* use ring  bg and text gray */
   --ring: #444648 ;
-  --text-primary: #030712;
+   /* use for text */
+  --text-primary: #030712;           
   --text-secondary: oklch(0.967 0.001 286.375);
+  --star: #F7F700 ;
 
   --background: oklch(1 0 0);
   --foreground: oklch(0.13 0.028 261.692);

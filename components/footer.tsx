@@ -5,70 +5,18 @@ import { Headset, Phone, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="container mx-auto px-4 sm:px-6 lg:px-16 py-8 bg-white ">
-      {/* TOP SUPPORT SECTION */}
-      <div className="border-y py-5">
-        <div className="">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-start lg:items-center">
-
-            {/* Help */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <Headset size={42} className="text-slate-700 shrink-0" />
-              <div>
-                <h3 className="font-bold text-lg sm:text-xl uppercase">
-                  You Need Help?
-                </h3>
-                <p className="text-gray-600 text-sm mt-1 leading-relaxed">
-                  Do not hesitate to ask, our specialists will help you choose proper products.
-                </p>
-              </div>
-            </div>
-
-            {/* Phone */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <Phone size={30} className="shrink-0" />
-              <div>
-                <h4 className="text-lg sm:text-xl font-medium">
-                  +06 (800) 801-858
-                </h4>
-                <p className="text-gray-500 text-sm">
-                  Mon–Fri: 8:00 am - 4:00 pm
-                </p>
-              </div>
-            </div>
-
-            {/* Email */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <Mail size={30} className="shrink-0" />
-              <div>
-                <h4 className="text-lg sm:text-xl font-bold break-all">
-                  info@taskco.com
-                </h4>
-                <p className="text-gray-500 text-sm">
-                  Mail to us directly
-                </p>
-              </div>
-            </div>
-
-            {/* Button */}
-            <div className="flex sm:justify-start lg:justify-end">
-              <button className="w-full sm:w-auto bg-primary hover:bg-primary transition px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold uppercase text-sm sm:text-base">
-                Start New Chat
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <footer className="container mx-auto px-4 sm:px-6 lg:px-16 py-8 bg-background ">
+     
 
       {/* NEWSLETTER */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-16 py-10">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 justify-between items-center">
 
           <div className="text-center lg:text-left">
-            <h3 className="font-bold text-2xl sm:text-3xl uppercase">
+            <h3 className="font-bold text-2xl text-text-primary sm:text-3xl uppercase">
               Newsletter
             </h3>
-            <p className="text-gray-600 mt-2 text-sm sm:text-base">
+            <p className="text-ring mt-2 text-sm sm:text-base">
               Subscribe to get the latest deals, promotions and offering.
             </p>
           </div>
@@ -78,9 +26,9 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="w-full h-12 sm:h-14 rounded-full border bg-white px-5 sm:pl-6 sm:pr-40 outline-none"
+                className="w-full h-12 sm:h-14 rounded-full border bg-background px-5 sm:pl-6 sm:pr-40 outline-none"
               />
-              <button className="sm:absolute sm:right-1 sm:top-1/2 sm:-translate-y-1/2 bg-primary hover:bg-yellow-500 transition px-6 sm:px-8 h-12 sm:h-12 rounded-full font-bold uppercase text-sm">
+              <button className="sm:absolute sm:right-1 text-text-secondary sm:top-1/2 sm:-translate-y-1/2 bg-primary hover:bg-primary/50 transition px-6 sm:px-8 h-12 sm:h-12 rounded-full font-bold uppercase text-sm">
                 Subscribe
               </button>
             </div>
@@ -145,13 +93,13 @@ export default function Footer() {
             },
           ].map((section, i) => (
             <div key={i}>
-              <h4 className="font-bold text-xl sm:text-2xl mb-4 sm:mb-6">
+              <h4 className="font-bold text-xl text-text-primary sm:text-2xl mb-4 sm:mb-6">
                 {section.title}
               </h4>
-              <ul className="space-y-3 sm:space-y-2 text-gray-700  hover:transition-x-2 text-sm sm:text-base">
+              <ul className="space-y-3 sm:space-y-2 text-ring  hover:transition-x-2 text-sm sm:text-base">
                 {section.items.map((item, idx) => (
                   <li key={idx}>
-                    <Link href="#">{item}</Link>
+                    <Link className="text-text-primary active:scale-95 transition hover:text-primary" href="#">{item}</Link>
                   </li>
                 ))}
               </ul>
@@ -165,7 +113,7 @@ export default function Footer() {
   <div className="container mx-auto px-4 sm:px-6 lg:px-16 py-6">
     <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
 
-      <p className="text-gray-600 text-sm sm:text-base">
+      <p className="text-ring text-sm sm:text-base">
         © Electro: Buy electronics products and gadgets online
       </p>
 

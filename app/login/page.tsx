@@ -12,18 +12,18 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-      <div className="w-full max-w-md bg-white p-6 rounded-lg shadow sticky ">
+    <div className="min-h-screen flex items-center justify-center bg-ring/10 px-4">
+      <div className="w-full max-w-md text-text-primary bg-backfround p-6 rounded-lg shadow sticky ">
         <h1 className="text-2xl text-primary font-bold text-center mb-2">Login</h1>
 
-        <p className="text-center text-gray-500 mb-6">
+        <p className="text-center text-ring mb-6">
           Enter your account details
         </p>
 
         <form onSubmit={handleLogin} className="space-y-4">
           {/* Email */}
           <div>
-            <label className="block mb-1 text-sm font-medium">
+            <label className="block mb-1 text-text-primary text-sm font-medium">
               Email
             </label>
 
@@ -38,7 +38,7 @@ export default function LoginPage() {
 
           {/* Password */}
           <div>
-            <label className="block mb-1 text-sm font-medium">
+            <label className="block mb-1 text-text-primary text-sm font-medium">
               Password
             </label>
 
@@ -54,16 +54,16 @@ export default function LoginPage() {
           {/* Button */}
           <button
             type="submit"
-            className="w-full bg-primary text-white py-3 rounded-md hover:opacity-90"
+            className="w-full bg-primary text-background py-3 rounded-md hover:opacity-90"
           >
             Login
           </button>
 
-          <p className="text-center text-sm text-gray-500">
+          <p className="text-center text-sm text-ring">
             Don't have an account?{" "}
             <a
               href="/signup"
-              className="text-primary font-medium hover:underline"
+              className="text-primary  font-medium hover:underline"
             >
               Sign Up
             </a>

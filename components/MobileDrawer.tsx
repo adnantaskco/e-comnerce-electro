@@ -82,15 +82,15 @@ export default function MobileDrawer({
     <>
       {/* Overlay */}
       <div
-        className="fixed inset-0 bg-black/50 z-40"
+        className="fixed inset-0 bg-foreground/50 z-40"
         onClick={() => setMobileMenu(false)}
       />
 
       {/* Drawer */}
-      <div className="fixed left-0 top-0 h-screen w-80 bg-white z-50 shadow-xl overflow-y-auto">
+      <div className="fixed left-0 top-0 h-screen w-80 bg-background z-50 shadow-xl overflow-y-auto">
 
         {/* Header */}
-        <div className="bg-primary text-white p-5">
+        <div className="bg-primary/30 text-text-primary p-5">
           <div className="flex justify-between items-center">
             <img src="https://taskco.io/assets/taskco.svg" alt="" />
             <button onClick={() => setMobileMenu(false)}>
@@ -98,35 +98,35 @@ export default function MobileDrawer({
             </button>
           </div>
 
-          <Link href="/loginpage" className="flex items-center gap-3 mt-6">
-            <div className="w-12 h-12 rounded-full bg-white text-primary flex items-center justify-center">
+          <Link href="/login" className="flex items-center gap-3 mt-6">
+            <div className="w-12 h-12 rounded-full bg-background text-primary flex items-center justify-center">
               <FiUser size={22} />
             </div>
 
             <div>
-              <h3 className="font-semibold">Sign In</h3>
-              <p className="text-sm opacity-90">My Account & Orders</p>
+              <h3 className="font-semibold text-text-primary">Sign In</h3>
+              <p className="text-sm opacity-90 text-text-primary">My Account & Orders</p>
             </div>
           </Link>
         </div>
 
         {/* Quick Menu */}
         <div className="p-4 border-b">
-          <div className="grid grid-cols-3 gap-4 text-center">
+          <div className="grid grid-cols-3 gap-4 text-text-primary text-center">
 
             <Link href="/cart">
               <FiShoppingBag className="mx-auto mb-2" size={22} />
-              <span className="text-sm">Cart</span>
+              <span className="text-sm text-text-primary">Cart</span>
             </Link>
 
             <Link href="/wishlist">
               <FiHeart className="mx-auto mb-2" size={22} />
-              <span className="text-sm">Wishlist</span>
+              <span className="text-sm text-text-primary">Wishlist</span>
             </Link>
 
             <Link href="/gadgets">
               <FaShopify className="mx-auto mb-2" size={22} />
-              <span className="text-sm">Products</span>
+              <span className="text-sm text-text-primary">Products</span>
             </Link>
 
           </div>
@@ -134,7 +134,7 @@ export default function MobileDrawer({
 
         {/* Categories Dropdown */}
         <div className="p-4">
-          <h3 className="font-bold text-gray-800 mb-4">
+          <h3 className="font-bold text-ring mb-4">
             Categories
           </h3>
 
@@ -144,14 +144,14 @@ export default function MobileDrawer({
               const isOpen = openIndex === index;
 
               return (
-                <div key={item.name} className="border rounded-lg">
+                <div key={item.name} className="border rounded-lg text-text-primary">
 
                   {/* Button */}
                   <button
                     onClick={() => toggle(index)}
                     className="w-full flex items-center justify-between px-3 py-3"
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 text-text-primary">
                       <Icon size={20} />
                       <span>{item.name}</span>
                     </div>
@@ -170,7 +170,7 @@ export default function MobileDrawer({
                         <Link
                           key={brand}
                           href={`/products?brand=${brand}`}
-                          className="block text-sm text-gray-600 hover:text-black"
+                          className="block text-sm text-ring hover:text-text-primary"
                         >
                           • {brand}
                         </Link>
@@ -185,13 +185,13 @@ export default function MobileDrawer({
 
         {/* Extra Links */}
         <div className="border-t p-4">
-          <h3 className="font-bold mb-3">More</h3>
+          <h3 className="font-bold mb-3 text-text-primary">More</h3>
 
-          <div className="space-y-3 text-sm">
+          <div className="space-y-3 text-sm text-text-primary">
             <Link href="/offers">Today's Deals</Link>
             <Link href="/new-arrivals">New Arrivals</Link>
             <Link href="/track-order">Track Order</Link>
-            <Link href="/support">🎧 Customer Support</Link>
+            <Link href="/support"> Customer Support</Link>
           </div>
         </div>
       </div>

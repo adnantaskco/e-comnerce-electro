@@ -24,12 +24,13 @@ export default function TendingSections() {
   const scrollNext = () => emblaApi?.scrollNext();
 
   return (
-    <section className="bg-ring/5 py-5">
-    <div className="container mx-auto rounded-4xl bg-background px-4 md:px-16">
+    <section className=" bg-ring/5  py-5">
+      <div className="container mx-auto  rounded-4xl  px-4 md:px-16">
+          <div className="bg-background p-2 sm:p-4 rounded-3xl md:p-10">
             {/* Header */}
-      <div className="flex items-center justify-between border-b-2 py-5 bg-background mb-6">
-        <h2 className="text-lg md:text-xl font-bold border-b-2 text-text-primary border-primary pb-3">
-          Trending Products
+      <div className="flex items-center justify-between border-b-2 py-5 bg-background mb-3">
+        <h2 className="text-lg md:text-xl font-bold  text-text-primary border-primary ">
+          Trending Products This Week
         </h2>
 
         <button className="flex items-center text-ring gap-2 text-sm font-medium hover:text-primary">
@@ -136,6 +137,7 @@ export default function TendingSections() {
         </div>
       </div>
     </div>
+      </div>
     </section>
   );
 }
