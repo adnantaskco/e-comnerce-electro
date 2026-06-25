@@ -143,7 +143,7 @@ export default function CategoryBar() {
 
           {/* Gadgets */}
           <Link
-            href="/gadgets"
+            href="/"
             className="flex items-center gap-2 whitespace-nowrap flex-shrink-0 hover:text-primary transition-colors"
           >
             <Watch size={18} />

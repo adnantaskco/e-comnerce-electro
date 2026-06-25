@@ -4,7 +4,7 @@ import { FaCheckCircle } from "react-icons/fa";
 export default function OrderSuccess() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="bg-white p-10 rounded-2xl shadow-lg text-center max-w-md">
+      <div className="bg-background p-10 rounded-2xl shadow-lg text-center max-w-md">
 
         <FaCheckCircle className="text-green-500 text-7xl mx-auto mb-5" />
 
@@ -12,13 +12,13 @@ export default function OrderSuccess() {
           Congratulations!
         </h1>
 
-        <p className="text-gray-600 mb-6">
+        <p className="text-ring mb-6">
           Your order has been placed successfully.
         </p>
 
         <Link
           href="/"
-          className="bg-primary text-white px-6 py-3 rounded-lg inline-block"
+          className="bg-primary text-text-secondary px-6 py-3 rounded-lg inline-block"
         >
           Continue Shopping
         </Link>
