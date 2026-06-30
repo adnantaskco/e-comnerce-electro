@@ -124,7 +124,7 @@ export default function MobileDrawer({
               <span className="text-sm text-text-primary">Wishlist</span>
             </Link>
 
-            <Link href="/gadgets">
+            <Link href="/products">
               <FaShopify className="mx-auto mb-2" size={22} />
               <span className="text-sm text-text-primary">Products</span>
             </Link>
