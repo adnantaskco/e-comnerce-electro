@@ -8,7 +8,7 @@ import EarSection from "@/components/productSection/EarPhoneSection";
 import ElectricScooter from "@/components/productSection/ElectricScootersection";
 import Normalcard from "@/components/productSection/tendingSection";
 import Services from "@/components/services";
-import { TabsDemo } from "@/components/TabBar";
+import TabsDemo from "@/components/TabBar";
 
 
 export default function Home() {

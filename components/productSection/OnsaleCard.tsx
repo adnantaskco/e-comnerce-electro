@@ -31,7 +31,7 @@ function OnsaleCard() {
     <>
         <section className="">
        
-         <div className="flex items-center justify-between border-b-2  mb-6">
+         {/* <div className="flex items-center justify-between border-b-2  mb-6">
         <h2 className="text-lg md:text-xl text-text-primary font-bold border-b-2 border-primary pb-3">
           On Sell Product Of the Week
         </h2>
@@ -40,10 +40,10 @@ function OnsaleCard() {
           View All Product
           <FaAnglesRight />
         </button>
-      </div>
+      </div> */}
     
           {/* Slider */}
-          <div className="relative">
+          <div className="relative ">
             {/* Left */}
             <button
               onClick={scrollPrev}

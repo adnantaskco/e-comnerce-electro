@@ -29,7 +29,7 @@ function TopSaleCard() {
   return (
     <>
         <section className="">
-            <div className="flex items-center justify-between border-b-2  mb-6">
+            {/* <div className="flex items-center justify-between border-b-2  mb-6">
         <h2 className="text-lg md:text-xl text-text-primary font-bold border-b-2 border-primary pb-3">
           Top Sell Products
         </h2>
@@ -38,9 +38,9 @@ function TopSaleCard() {
           View All Product
           <FaAnglesRight />
         </button>
-      </div>
+      </div> */}
     
-          {/* Slider */}
+        
           {/* Slider */}
           <div className="relative">
             {/* Left */}

@@ -27,7 +27,7 @@ export default function FeaturedCard() {
   return (
     <>
         <section className="">
-            <div className="flex items-center justify-between border-b-2  mb-6">
+            {/* <div className="flex items-center justify-between border-b-2  mb-6">
         <h2 className="text-lg md:text-xl font-bold border-b-2 text-text-primary border-primary pb-3">
           New Featured Products
         </h2>
@@ -36,7 +36,7 @@ export default function FeaturedCard() {
           View All Product
           <FaAnglesRight />
         </button>
-      </div>
+      </div> */}
     
           {/* Slider */}
           <div className="relative">

@@ -63,7 +63,7 @@
    /* use for text */
   --text-primary: #030712;           
   --text-secondary: oklch(0.967 0.001 286.375);
-  --star: #F7F700 ;
+  --text-star: #F7F700 ;
 
   --background: oklch(1 0 0);
   --foreground: oklch(0.13 0.028 261.692);
@@ -231,7 +231,7 @@ button,
   --color-text-primary: #000000;
   --color-text-secondary: oklch(0.967 0.001 286.375);
 }
-.text-secoundary{
+.text-secondary{
   color: #D1D5DC;
 }
 

@@ -45,6 +45,27 @@ const suggestedProducts = [...identicalBrandProducts].slice(0, 4);
     setQuantity((prev) => prev + 1);
   };
 
+
+  const [rating, setRating] = useState(0);
+const [hoverRating, setHoverRating] = useState(0);
+const [comment, setComment] = useState("");
+
+const handleSubmitReview = (e) => {
+  e.preventDefault();
+  
+  // Console log the submission data
+  console.log("Review Submitted:", {
+    productId: product.id,
+    rating: rating,
+    comment: comment,
+    timestamp: new Date().toISOString()
+  });
+
+  // Optional: Reset form fields after submission
+  setRating(0);
+  setComment("");
+};
+
   return (
     <div className="container mx-auto px-4 md:px-16 py-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -68,13 +89,22 @@ const suggestedProducts = [...identicalBrandProducts].slice(0, 4);
           {/* Rating + Sold */}
           <div className="flex items-center gap-4 text-sm">
             <span className="text-cart-5 font-semibold flex items-center gap-1">
-              <CiStar className="text-lg text-star" /> {product.review || 4.5}
+              <CiStar className="text-lg text-text-star" /> {product.review || 4.5}
             </span>
             <span className="text-ring">
               {product.sold_amount || 120} Sold
             </span>
           </div>
-
+          <div>
+            <h1 className="text-text-primary font-semibold ">Discription:</h1>
+            <p className="text-sm text-text-primary leading-relaxed mb-4">
+            Experience premium quality and exceptional performance with the{" "}
+            <strong className="font-semibold text-blue-600">
+              {product?.name || "this product"}
+            </strong>
+            . Engineered to deliver reliable efficiency and modern functionality, it is designed to seamlessly fit into your daily routine. Crafted with high-grade durability and user convenience in mind, it offers the perfect balance of value and excellence.
+          </p>
+          </div>
           {/* Price Box */}
           <div className="bg-bacground p-4 rounded-xl border">
             <div className="flex items-end gap-3">
@@ -104,7 +134,7 @@ const suggestedProducts = [...identicalBrandProducts].slice(0, 4);
               <span className="font-semibold text-text-primary w-8 text-center">{quantity}</span>
               <button 
                 onClick={handleIncrease}
-                className="p-3 hover:bg-ring/10 transition active:scale-95 text-gray-600"
+                className="p-3 hover:bg-ring/10 transition active:scale-95 text-ring"
                 aria-label="Increase quantity"
               >
                 <FiPlus />
@@ -145,7 +175,7 @@ const suggestedProducts = [...identicalBrandProducts].slice(0, 4);
       {/* TABBED INTERFACE SECTION */}
       <div className="mt-12 bg-background border rounded-2xl overflow-hidden shadow-sm">
         {/* Tab Headers */}
-        <div className="flex border-b bg-ring/5 overflow-x-auto whitespace-nowrap">
+        <div className="flex border-b bg-ring/5 overflow-x-auto no-scrollbar whitespace-nowrap">
           {(["description", "specifications", "reviews"] as const).map((tab) => (
             <button
               key={tab}
@@ -239,15 +269,72 @@ const suggestedProducts = [...identicalBrandProducts].slice(0, 4);
           )}
 
           {activeTab === "reviews" && (
-            <div>
-              <h3 className="font-bold text-text-primary text-lg mb-3">Customer Reviews</h3>
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-2xltext-text-primary font-bold">{product.review || "4.5"}</span>
-                <span className="text-ring text-sm">out of 5 stars ({product.sold_amount || 120} responses)</span>
-              </div>
-              <p className="text-sm text-ring italic">No direct written user reviews yet. Be the first to write one!</p>
-            </div>
-          )}
+  <div>
+    <h3 className="font-bold text-text-primary text-lg mb-3">Customer Reviews</h3>
+    <div className="flex items-center gap-2 mb-4">
+      <span className="text-2xl text-text-primary font-bold">{product.review || "4.5"}</span>
+      <span className="text-ring text-sm">out of 5 stars ({product.sold_amount || 120} responses)</span>
+    </div>
+    <p className="text-sm text-ring italic mb-6">No direct written user reviews yet. Be the first to write one!</p>
+
+    <hr className="border-gray-200 mb-6" />
+
+    {/* Leave a Review Form */}
+    <form onSubmit={handleSubmitReview} className="space-y-4 bg-ring/1 p-4 rounded-lg">
+      <h4 className="font-semibold text-text-primary text-md">Write a Review</h4>
+      
+      {/* Star Rating Selection */}
+      <div>
+        <label className="block text-sm font-medium text-text-primary mb-1">Your Rating</label>
+        <div className="flex items-center gap-1">
+          {[1, 2, 3, 4, 5].map((star) => (
+            <button
+              key={star}
+              type="button"
+              className={`text-2xl transition-colors ${
+                star <= (hoverRating || rating) ? "text-text-star" : "text-ring/50"
+              }`}
+              onClick={() => setRating(star)}
+              onMouseEnter={() => setHoverRating(star)}
+              onMouseLeave={() => setHoverRating(0)}
+            >
+              ★
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Comment Box */}
+      <div>
+        <label htmlFor="comment" className="block text-sm font-medium text-text-primary mb-1">
+          Your Review
+        </label>
+        <textarea
+          id="comment"
+          rows="4"
+          className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm text-text-primary"
+          placeholder="Share your thoughts about this product..."
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+          required
+        />
+      </div>
+
+      {/* Submit Button */}
+      <button
+        type="submit"
+        disabled={rating === 0}
+        className={`px-4 py-2 rounded-md text-sm font-medium text-white transition-colors ${
+          rating === 0 
+            ? "bg-gray-400 cursor-not-allowed" 
+            : "bg-blue-600 hover:bg-blue-700"
+        }`}
+      >
+        Submit Review
+      </button>
+    </form>
+  </div>
+)}
         </div>
       </div>
 
