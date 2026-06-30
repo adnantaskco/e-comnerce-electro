@@ -269,20 +269,20 @@ const handleSubmitReview = (e) => {
           )}
 
           {activeTab === "reviews" && (
-  <div>
-    <h3 className="font-bold text-text-primary text-lg mb-3">Customer Reviews</h3>
-    <div className="flex items-center gap-2 mb-4">
-      <span className="text-2xl text-text-primary font-bold">{product.review || "4.5"}</span>
-      <span className="text-ring text-sm">out of 5 stars ({product.sold_amount || 120} responses)</span>
-    </div>
-    <p className="text-sm text-ring italic mb-6">No direct written user reviews yet. Be the first to write one!</p>
+      <div>
+        <h3 className="font-bold text-text-primary text-lg mb-3">Customer Reviews</h3>
+        <div className="flex items-center gap-2 mb-4">
+          <span className="text-2xl text-text-primary font-bold">{product.review || "4.5"}</span>
+          <span className="text-ring text-sm">out of 5 stars ({product.sold_amount || 120} responses)</span>
+        </div>
+        <p className="text-sm text-ring italic mb-6">No direct written user reviews yet. Be the first to write one!</p>
 
-    <hr className="border-gray-200 mb-6" />
+        <hr className="border-gray-200 mb-6" />
 
-    {/* Leave a Review Form */}
-    <form onSubmit={handleSubmitReview} className="space-y-4 bg-ring/1 p-4 rounded-lg">
-      <h4 className="font-semibold text-text-primary text-md">Write a Review</h4>
-      
+        {/* Leave a Review Form */}
+        <form onSubmit={handleSubmitReview} className="space-y-4 bg-ring/1 p-4 rounded-lg">
+          <h4 className="font-semibold text-text-primary text-md">Write a Review</h4>
+          
       {/* Star Rating Selection */}
       <div>
         <label className="block text-sm font-medium text-text-primary mb-1">Your Rating</label>

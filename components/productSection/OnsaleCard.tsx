@@ -78,7 +78,7 @@ function OnsaleCard() {
                     <div className="group relative rounded-xl hover:border-2 overflow-hidden bg-background  hover:shadow-xl transition-all duration-300">
                       
                    <button className="absolute top-3 right-3 z-10 flex items-center gap-2  bg-background px-3 py-2 rounded-full shadow-md opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300">
-                      <FaHeart className="text-distructive" />
+                      <FaHeart className="text-destructive" />
                       <span className="text-sm font-medium cursor-pointer text-text-primary">Wishlist</span>
                     </button>
                        <Link key={item.id} href={`/products/${item.id}`}>

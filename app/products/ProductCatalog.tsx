@@ -1,5 +1,5 @@
 "use client";
-import { Suspense } from "react";
+
 import Link from "next/link";
 import { useCart } from "../context/CartContext";
 import { FaCartArrowDown, FaHeart, FaSliders, FaXmark } from "react-icons/fa6";
@@ -7,7 +7,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { useSearchParams, useRouter } from "next/navigation"; 
 import { AllProducts } from "@/lib/products"; 
 
-// 1. Added TypeScript definitions for safety
+
 interface Product {
   id: string | number;
   name: string;
