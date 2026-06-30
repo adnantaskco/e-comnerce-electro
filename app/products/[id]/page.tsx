@@ -96,7 +96,7 @@ const handleSubmitReview = (e) => {
             </span>
           </div>
           <div>
-            <h1 className="text-text-primary font-semibold ">Discription:</h1>
+            <h1 className="text-text-primary font-semibold ">Description:</h1>
             <p className="text-sm text-text-primary leading-relaxed mb-4">
             Experience premium quality and exceptional performance with the{" "}
             <strong className="font-semibold text-blue-600">
