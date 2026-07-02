@@ -50,7 +50,7 @@ const suggestedProducts = [...identicalBrandProducts].slice(0, 4);
 const [hoverRating, setHoverRating] = useState(0);
 const [comment, setComment] = useState("");
 
-const handleSubmitReview = (e) => {
+const handleSubmitReview = (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
   
   // Console log the submission data
@@ -311,7 +311,7 @@ const handleSubmitReview = (e) => {
         </label>
         <textarea
           id="comment"
-          rows="4"
+          rows={4}
           className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm text-text-primary"
           placeholder="Share your thoughts about this product..."
           value={comment}
